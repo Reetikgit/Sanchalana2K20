@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Spectral&display=swap" rel="stylesheet">
+  <script src="jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Permanent+Marker:400' rel='stylesheet' type='text/css'>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title>
+    SVIT-TechVidya
+</title>
+</head>
+
+<body>
+<style type="text/css">
+.spinner {
+  width:50px;
+  height:50px;
+position: absolute;
+left:46%;
+top: 46%;
+-webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(360deg)  }
+}
+
+.spinner-wrapper {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: black;
+opacity:0.9;
+z-index: 999999;
+}
+/*LOADER CLOSED*/
+    * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+    *:before, *:after { -webkit-box-sizing: inherit; -moz-box-sizing: inherit; box-sizing: inherit; }
+
+    html { background: #000; font: normal 1em/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif; color: #fff; text-align: center; height: 100%; }
+    body { height: 100%;
+      color: #eee;
+    }
+    @media screen and (min-width: 601px) {
+ 
+  h1.about{
+    font-size: 50px;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  
+  h1{
+    font-size: 40px;
+  }
+}
+
+  #video-viewport { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1; }
+    video {    display: block; width: 100%; height: auto; 
+               position:absolute;
+               top:50%;
+              left:50%;
+              min-width:100%;
+              min-height:100%;
+              width:auto;
+              height:auto;
+              z-index:-100;
+              -ms-transform: translateX(-50%) translateY(-50%);
+              -moz-transform: translateX(-50%) translateY(-50%);
+              -webkit-transform: translateX(-50%) translateY(-50%);
+              transform: translateX(-50%) translateY(-50%);
+              background: url(../images/clouds.jpg) no-repeat;
+              background-size: cover;
+          }
+ #video-viewport2 { position: absolute;  width: 100%; height: 100%; overflow: hidden; z-index: -1; }
+    video {    display: block; width: 100%; height: auto; 
+               position:absolute;
+               top:50%;
+              left:50%;
+              min-width:100%;
+              min-height:100%;
+              width:auto;
+              height:auto;
+              z-index:-100;
+              -ms-transform: translateX(-50%) translateY(-50%);
+              -moz-transform: translateX(-50%) translateY(-50%);
+              -webkit-transform: translateX(-50%) translateY(-50%);
+              transform: translateX(-50%) translateY(-50%);
+              background: url(../images/clouds.jpg) no-repeat;
+              background-size: cover;
+          }
+  .fullsize-video-bg { height: 100%; overflow: hidden; }
+
+  .fullsize-video-bg:before { content: ""; background: rgba(114,45,0,.35); position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+    
+
+
+  .fullsize-video-bg .inner { display: table; width: 100%; max-width: 24em; height: 100%; margin: 0 auto; padding: 0; position: relative; z-index: 2; text-shadow: 0 1px 5px rgba(0,0,0,.5); }
+  .fullsize-video-bg .inner > div { text-align: center; display: table-cell; vertical-align: middle; padding: 0 2em; }
+  .fullsize-video-bg2 { height: 100%; overflow: hidden; }
+
+  .fullsize-video-bg2:before { content: "";  position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+  .fullsize-video-bg:after {
+     content: ""; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgTWFjaW50b3NoIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjI4RkZBQTgzNzg1NzExRTU4NTQyODc3OUM4MTZGMUREIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjI4RkZBQTg0Nzg1NzExRTU4NTQyODc3OUM4MTZGMUREIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MjhGRkFBODE3ODU3MTFFNTg1NDI4Nzc5QzgxNkYxREQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MjhGRkFBODI3ODU3MTFFNTg1NDI4Nzc5QzgxNkYxREQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz66uHInAAAAIUlEQVR42mL5//8/AyMj42YGIGBigABfEMEIkoEBgAADAKvuBwVS8BAjAAAAAElFTkSuQmCC);
+      background-size: 3px 3px; 
+      position: absolute; top: 0; 
+      left: 0; width: 100%; height: 100%;
+       z-index: 1; 
+    }
+
+
+    .fullsize-video-bg2 .inner { display: table; width: 100%; max-width: 24em; height: 100%; margin: 0 auto; padding: 0; position:relative; z-index: 2; text-shadow: 0 1px 5px rgba(0,0,0,.5); }
+    .fullsize-video-bg2 .inner > div { text-align: center; display: table-cell; vertical-align: middle; padding: 0 2em; }
+    h1
+    {
+    color: #fff;
+    text-align:center;
+ 
+    font-family: Permanent Marker, sans-serif;
+    text-transform: uppercase;
+  
+    overflow: hidden;
+    font-size:8vw;
+    line-height: 1.1em;
+ 
+    }
+    .nav{
+       color: black;
+  
+ 
+    font-family: Permanent Marker, sans-serif;
+    text-transform: uppercase;
+  
+
+    font-size:1vw;
+    
+    }
+    .w3-jumb
+    {
+      color:black;
+    text-align:center;
+ 
+    font-family: Permanent Marker, sans-serif;
+    text-transform: uppercase;
+  
+    overflow: hidden;
+    font-size:5vw;
+    line-height: 1.1em;
+    }
+    #section2{
+      background-color:white;
+      background:url("head6.jpg");
+    }
+    #section3{
+      background-color:white;
+
+    }
+    #section4{
+      background-color:black;
+
+      }
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+    .about
+    {
+  color:black;
+  font-weight:1000;
+  text-align:left;
+  font-family: "Permanent Marker";
+   font-size: 24px; font-style:normal;
+  overflow: hidden;
+  font-size:5vw;
+ 
+    }
+    h3
+    {
+    font-family: Permanent Marker, sans-serif;
+    text-transform: uppercase;
+    font-size:3em;
+    line-height: 1.1em;
+    }
+    p{
+
+    font-family: Permanent Marker, sans-serif;
+    
+    font-size:4vw;
+    line-height: 1.1em;
+
+    }
+    .smallp{
+      font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;;
+      color:black;
+    font-size:2.3em;
+    line-height: 1.1em;
+    }
+    h3{
+      font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size:2vw;
+    line-height: 1.1em;
+
+    }
+    
+
+  a {
+    color: #000;
+    }
+
+/* header */
+
+.header {
+  
+  opacity:0.9;
+  background-color: #eee;
+  opacity:0.8;
+  box-shadow: 1px 1px 4px 0 rgba(0,5,0,1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+
+  }
+
+.header ul
+ {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+    font-weight:1000;
+    color:black
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+    background-color: #eee;
+  opacity:0.8;
+}
+
+.header li a:hover,
+.header .menu-btn:hover 
+{
+  background-color:cyan;
+}
+
+.header .logo 
+{
+  display: block;
+  float: left;
+  font-size:1em;
+  font-weight:800;
+  color:black;
+  padding:20px 20px;
+  text-decoration: none;
+    background-color: #eee;
+  opacity:0.8;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height:0;
+  transition: max-height .2s ease-out;
+  background-color: #eee;
+  opacity:0.9;
+
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 30px 10px;
+  position: relative;
+  user-select: none;
+
+}
+
+.header .menu-icon .navicon {
+  background:#999;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width:24px;
+     background-color:gray;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #999;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+  
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+
+
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height:500px;
+  background-color:#eee;
+  color:blue;
+
+  
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+
+.item.footer {
+  flex-wrap: wrap;
+  padding: 5rem;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.7;
+  grid-column: span 1;
+  @media screen and (min-width:823px) and (max-width:1223px) {
+    grid-column: span 2;
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
+    padding: 3px 0;
+    border-bottom: 1px dashed;
+    &:hover {
+      border-bottom: 1px solid;
+    }
+  }
+}
+
+footer {
+  margin-top: 1.5rem;
+  a {
+    text-decoration: none;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px dashed #fff;
+    color: #fff;
+    margin: 5px;
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .icons {
+      margin-top: 8px;
+      display: inline-block;
+      font-size: 20px;
+      &:before {
+        position: relative;
+      }
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+  }
+}
+
+.main-content {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  .item {
+    display: grid;
+    grid-template-rows: 1fr min-content;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    flex-wrap: wrap;
+    background: var(--bg-color);
+    &:not(.footer) {
+      padding-top: 1rem;
+    }
+  }
+}
+
+button {
+  background: transparent;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius:50px;
+ 
+  font:1em "Margarine", sans-serif;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s ease-in-out;
+  letter-spacing: 2px;
+}
+button:hover
+{
+  background-color:gray;
+}
+.button-knowmore {
+  position:relative;
+  width:50%;
+  font:2em;
+  border-radius:10px;
+  left:24%;
+ ;
+  marquee {
+    position: absolute;
+    width: 90%;
+    top: 125%;
+    left: 5%;
+    font: 18px/1 "Margarine", sans-serif;
+    span {
+      display: inline-block;
+      height: 20px;
+      &:not(:last-child) {
+        margin-right: 130px;
+      }
+    }
+  }
+.button-pressure {
+  position:relative;
+  width: 50%;
+  left:24%;
+  marquee {
+    position: absolute;
+    width: 90%;
+    top: 125%;
+    left: 5%;
+    font: 18px/1 "Margarine", sans-serif;
+    span {
+      display: inline-block;
+      height: 20px;
+      &:not(:last-child) {
+        margin-right: 130px;
+      }
+    }
+  }
+
+html, body, * {
+    padding:0;
+    margin:0;
+}
+#contain {
+    background-color:#3b3b40;
+    height:100%;/* no need  */
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+#img {
+    padding:0;
+    margin:0;
+    width:49%;
+    min-width:350px;   
+    vertical-align:bottom;
+}
+p {
+    width:49%;
+    min-width:350px;
+    display:inline-block;
+    padding:40px;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    color:white;
+}
+.col-text {
+  height:20em;
+}
+.grid-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  flex-direction: row; 
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+}
+.col {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.col-left {
+  -webkit-box-ordinal-group:-1;
+  -webkit-order: -1;
+  -ms-flex-order: -1;
+  order: -1;
+}
+.col-text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Aligner-item {
+  width: 60%;
+}
+.col-image {
+  background-size: cover;
+  background-position:center center;
+  width: 100%;
+  height:50%;
+
+}
+
+@media (max-width: 640px) {
+  .grid-flex {
+    height: 40em;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    flex-direction: column; 
+   }
+  .col {
+    order:vertical;
+  }
+  .col-left {
+    -webkit-box-ordinal-group:0;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+  .col-text div p {
+    padding: 1em;
+  }
+  .Aligner-item {
+    width: 90%;
+  }
+}
+.img-responsive.img-center {
+  margin: 0 auto;
+  width:50%;
+
+}
+.content p{
+ margin-top:0px;
+}
+
+
+}
+.page-header
+{
+  top:10px;
+  margin-bottom:0px;
+  padding:100px 0px 64px 0px;
+  color:#1D1F20;
+  overflow: hidden;
+}
+#heading .page-header{
+    padding-bottom:100px;
+}
+#heading
+{
+  background:url("http://img15.hostingpics.net/pics/201289headerbackground.png");
+  height:600px;
+}
+
+
+    .container-fluid {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    height:46em;
+    overflow: hidden;
+    /*width:100%;*/
+}
+.navbar-brand
+{
+  font-family: 'Lustria', serif;
+  font-weight:bold;
+  color:#1D1F20;
+  overflow: hidden;
+}
+.navbar-default .navbar-nav>li>a:hover
+{
+  color:#eee;
+  overflow: hidden;
+  background-color:#23527c  ;
+}
+
+/*!TO BE FIXED!*/
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover
+{
+  color:#eee;
+  background-color:#23527c ;
+  overflow: hidden;
+}
+.navbar
+{
+  margin-bottom:0px;
+  opacity:0.9;
+  background-color:#eee;
+  overflow: hidden;
+}
+.container-fluid
+{
+ 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  width: 100%; max-width:992px; margin:auto; display:block;position: relative;
+overflow: hidden;
+}
+.cntvideo video{
+
+  width: 100%;
+    height: 100%;
+   
+
+}
+
+
+.img-profile
+{
+  height:256px;
+  width:256px;
+  padding:3px;
+  border:solid 1px #ddd;
+  border-radius:50%;
+}
+
+
+.img-responsive.img-center {
+  margin: 0 auto;
+  width:100vw;
+
+}
+.content p{
+ margin-top:0px;
+}
+
+
+
+.menu 
+{
+  display: none;
+}
+</style>
+
+<header class="header">
+  <a href="http://saividya.ac.in/" class="logo">
+    Sai Vidya Institute Of Technology 
+  </a>
+  <input class="menu-btn" onclick="myFunction()" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="about.html">About</a></li>
+
+    <li><a href="Events.html">Events</a>
+    <li><a href="gallery.html">Tech Gallery</a></li>
+    <li><a href="#contact">Conatct</a></li>
+     
+  
+     <li><a target="https://www.facebook.com/SaiVidyaInstituteOfTechnology/" href="https://www.facebook.com/SaiVidyaInstituteOfTechnology/"><i class="fa fa-facebook"></i></a></li>
+    <li><a target="https://twitter.com/saividyaIT" href="https://twitter.com/saividyaIT"><i class="fa fa-twitter"></i></a></li>
+    <li><a target="_blank" href=""><i class="fa fa-github"></i></a></li>
+    <li><a target="_blank" href=""><i class="fa fa-google-plus"></i></a></li> 
+                 
+
+    </ul> 
+</header>
+<div class="spinner-wrapper">
+<div class="spinner">
+  <img src="icon2.png" style="width:100%;margin:20px 0" alt="Blog Template"><br>
+</div>
+</div>
+<section id="section10" class="fullsize-video-bg">
+    <div class="inner">
+        <div>
+        <h1>Techvidya 2k19</h1>
+           
+        <div class="item button-pressure" style="--bg-color: #9b59b6;">
+    <a href="Events.html"><button >REGISTER
+      <marquee scrollamount="12"><span>Register Online</span><span> Click here</span></marquee>
+    </button></div></a>
+        <p>18th October</p>
+        </div>
+    </div>
+    <div id="video-viewport">
+        <video width="1920" height="1280" autoplay muted loop>
+            <source src="q.mp4" type="video/mp4" />
+            <source src="q.mp4" type="video/webm" />
+        </video>
+    </div>
+</section>
+<section class="section2">
+<div id="section2" data-aos="fade-down-right" class="page-header">
+  <h1 class="about">About</h1>
+
+<div class="w3-container w3-padding-16 w3-card" style="">
+<h3 class="w3-center"></h3>
+<div class="w3-content" style="max-width:800px">
+<img src="icon2.png" style="width:50%;margin:20px 0" alt="Blog Template"><br>
+<div class="w3-row">
+  
+   <p class="smallp"><strong>Techvidya</strong> is our annual state level technical fest,it is festival organized to host events related to various technical aspects.It is a platform to showcase the practical talent in the field they've learnt.Each branch such as Electrical,civil,computer etc...
+         </p>
+          <div class="item button-knowmore" style="--bg-color: #9b59b6;">
+             <a href="about.html"> <button class="w3-button w3-teal w3-large">Know more</button>
+            </p></a>
+        
+</div>
+</div>
+</div>
+</div>
+</section>
+
+         
+</div></section>
+<section class="section4">
+<div class=" w3-padding-64 w3-margin-bottom w3-left">
+  <h1 class="w3-jumb">Register</h1>
+</div>
+
+<div class="w3-row-padding w3-content w3-black" style="max-width:1400px">
+  <div class="w3-twothird w3-light-grey">
+    <!-- <img src="register2.jpg" alt="Notebook" style="width:100%"> -->
+    <div class="w3-container">
+ 
+</div>
+
+<div class="w3-content" style="max-width:1200px">
+  <img class="mySlides" src="CSE.png" style="width:100%;">
+  <img class="mySlides" src="cse2.png" style="width:100%;display:none;">
+  <img class="mySlides" src="ece.jpeg" style="width:100%;display:none">
+  <img class="mySlides" src="spotads.png" style="width:100%;display:none">
+
+  <div class="w3-row-padding w3-section">
+
+    <div class="w3-col s4">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="cse2.png" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
+    </div>
+    <div class="w3-col s4">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="ece.jpeg" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
+    </div>
+    <div class="w3-col s4">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="spotads.png" style="width:100%;cursor:pointer" onclick="currentDiv(4)">
+    </div>
+   
+  </div>
+
+</div>
+    
+  </div>
+  <div class="w3-third">
+    <div class="w3-container w3-light-grey">
+      <h4>Participate in different events and get chance to win cash prizes and certificates.</h2>
+        <h4>Book your slots soon.</h2>
+          <h4>Check out the below navigation button.</h2>
+        <div class="item button-knowmore" style="--bg-color: #9b59b6;">
+          <br><br><br><br>
+            <a href="Events.html"><button class="w3-button w3-teal w3-block w3-large">Register</button>
+     </a>
+    </div>
+    <br>
+    <br>
+  </div>
+</div>
+  </p> 
+    <ul>  
+   </ul>
+</section>
+ <footer id="contact" class="w3-center w3-black w3-padding-64">
+  
+  <div class="w3-xlarge w3-section">
+    <a href="https://www.facebook.com/reetik.chitragupt" class="fa fa-facebook-official w3-hover-opacity w3-black"></i></a>
+   <a href="https://www.instagram.com/reetik_chitragupt/" class="fa fa-instagram w3-hover-opacity w3-black"></i></a>
+    <a href="https://github.com/Reetikgit/Reetikgit.github.io" class="fa fa-github w3-hover-opacity w3-black"></i></a>
+    <a href="https://twitter.com/RChitragupt"class="fa fa-twitter w3-hover-opacity w3-black"></i></a>
+    <a href="https://www.linkedin.com/in/reetik-chitragupt-2316a9182/" class="fa fa-linkedin w3-hover-opacity"></i></a>
+    <i class="fa fa-envelope w3-hover-opacity w3-black">reetikchitragupt@gmail.com</i>
+  </div>
+   <i class="fa fa-phone w3-hover-opacity w3-black">7355670645</i>
+  <h4 class="footer">Developed & DESIGNED by  </h3><h3>Reetik Chitragupt(5th Sem ISE)</h4><a href="" title="W3.CSS" target="_blank" class="w3-hover-text-green"></a></p>
+
+  <h4 class="footer">SAI VIDYA INSTITUTE OF TECHNOLOGY</h4>
+  <a href="#section10" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    
+</footer> 
+
+<script type="text/javascript">
+function myFunction() {
+  document.getElementById("menu-btn").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.menu-icon')) {
+    var dropdowns = document.getElementsByClassName("menu");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+  $(document).ready(function() {
+
+$(window).on("load", function() {
+preloaderFadeOutTime = 500;
+function hidePreloader() {
+var preloader = $('.spinner-wrapper');
+preloader.fadeOut(preloaderFadeOutTime);
+}
+hidePreloader();
+});
+});
+ 
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
+}
+</script>
+
+</body>
+
+<script type="text/javascript">
+
+
+document.getElementById("myLink").click();
+   $( document ).ready(function() { 
+    $('a').click(function(e){
+      
+    $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 800);
+});
+    var min_w = 300;
+var vid_w_orig;
+var vid_h_orig;
+
+$(function() {
+
+    vid_w_orig = parseInt($('video').attr('width'));
+    vid_h_orig = parseInt($('video').attr('height'));
+
+    $(window).resize(function () { fitVideo(); });
+    $(window).trigger('resize');
+
+});
+
+function fitVideo() {
+
+    $('#video-viewport').width($('.fullsize-video-bg').width());
+    $('#video-viewport').height($('.fullsize-video-bg').height());
+
+    var scale_h = $('.fullsize-video-bg').width() / vid_w_orig;
+    var scale_v = $('.fullsize-video-bg').height() / vid_h_orig;
+    var scale = scale_h > scale_v ? scale_h : scale_v;
+
+    if (scale * vid_w_orig < min_w) {scale = min_w / vid_w_orig;};
+
+    $('video').width(scale * vid_w_orig);
+    $('video').height(scale * vid_h_orig);
+
+    $('#video-viewport').scrollLeft(($('video').width() - $('.fullsize-video-bg').width()) / 2);
+    $('#video-viewport').scrollTop(($('video').height() - $('.fullsize-video-bg').height()) / 2);
+
+};
+</script>
+</html>
