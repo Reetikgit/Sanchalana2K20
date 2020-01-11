@@ -997,6 +997,7 @@ ul#nav li.current a:after {
 /* hero slider */
 #hero-slider {
 	margin: 120px 0 54px;
+
 }
 
 #hero-slider .slides .flex-caption {
@@ -1265,6 +1266,10 @@ ul#nav li.current a:after {
 
 #hero .flex-control-paging li a:hover {
 	background: #c8c8c8;
+}
+.disp h1:hover
+{
+	color:cyan;
 }
 
 #hero .flex-control-paging li a.flex-active {
