@@ -60,6 +60,10 @@
               background: url(../images/clouds.jpg) no-repeat;
               background-size: cover;
           }
+          h5{
+              color:orange;
+              font-size: 3rem;
+          }
   @media only screen and (max-width:480px)
    {
    video {    display: block; width: 100%; height: auto; 
@@ -1047,7 +1051,7 @@
 
 <script type="text/javascript">
   /*Script for countdown timer*/    
-var target_date = new Date().getTime() + (1000*3600*48); // set the countdown date
+var target_date = new Date("Jan 13, 2020 17:55:25").getTime(); // set the countdown date
 var days, hours, minutes, seconds; // variables for time units
 
 var countdown = document.getElementById("tiles"); // get tag element
@@ -1073,6 +1077,10 @@ function getCountdown(){
 
   // format countdown string + set tag value
   countdown.innerHTML = "<span>" + days + "</span><span>" + hours + "</span><span>" + minutes + "</span><span>" + seconds + "</span>"; 
+  if ( seconds_left < 0) {
+   
+      countdown.innerHTML = "<span>" + "<h5>Day</h5>" + "</span><span>" + "O" + "</span><span>" + "N" + "</span><span>" + "E" + "</span>"; 
+  }
 }
 
 function pad(n) {
