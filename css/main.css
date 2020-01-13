@@ -1536,7 +1536,7 @@ ul#nav li.current a:after {
   height:20%;
   /*text-align: center;*/
   position: relative;
-
+  visibility: hidden;
   bottom: 0%;
 }
 
@@ -1544,6 +1544,7 @@ ul#nav li.current a:after {
   width: 15%;
   font: bold 50% 'Droid Sans', Arial, sans-serif;
   color: #f47321;
+  visibility: hidden;
   text-shadow: 1px 1px 0px #000;
   /*text-align: center;*/
   text-transform: uppercase;
