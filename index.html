@@ -33,6 +33,11 @@
 
 </head>
 
+<style type="text/css">
+  
+  /*Css For countdown Timer*/
+  
+</style>
 <body>
 
 <style type="text/css">
@@ -178,7 +183,7 @@
 							<div class="flex-caption">
 								<h1 class="disp" style="line-height: 1em;"><a class="smoothscroll" href="#portfolio"> CSE </a><br><a class="smoothscroll" href="#portfolio">ISE </a> <br><a class="smoothscroll" href="#portfolio"> CIVIL </a><br><a class="smoothscroll" href="#portfolio"> Mechanical</a><br> <a class="smoothscroll" href="#portfolio">ELECTRICAL </a><br> <a class="smoothscroll" href="#portfolio">ECE </a><br><a class="smoothscroll" href="#portfolio"> MBA</a> </h1>
 
-								<h3 class="">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</h3>			   
+								<h3 class=""></h3>			   
 							</div>					
 					   </li>
 
@@ -188,7 +193,7 @@
 								<h1 class="">Take a look at some of <a class="smoothscroll" href="#portfolio" title="portfolio" >our Events</a> or 
 								<a class="smoothscroll" href="#contact" title="contact us">get in touch</a> to discuss how we can help you.</h1>
 
-								<h3 class="">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</h3>			   
+								<h3 class=""></h3>			   
 							</div>
 					   </li>					              
 
@@ -206,6 +211,15 @@
 
    </section> <!-- end homepage hero -->
 
+      <div id="countdown">
+              <div id='tiles'></div>
+              <div class="labels">
+                <li>Days</li>
+                <li>Hours</li>
+                <li>Mins</li>
+                <li>Secs</li>
+              </div>
+              </div>
 
    <!-- portfolio
    ================================================== -->
@@ -219,9 +233,13 @@
 
 	         <hr />               
 
-	         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	         </p>
+           <!-- countdown timer here -->
 
+         
+
+	        <!--  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	         </p>
+ -->
 	      </div>
 
       </div> <!-- end section-head -->
@@ -1026,6 +1044,44 @@
    <script src="js/jquery.placeholder.min.js"></script>
    <script src="js/jquery.magnific-popup.min.js"></script>  
    <script src="js/main.js"></script>
+
+<script type="text/javascript">
+  /*Script for countdown timer*/    
+var target_date = new Date().getTime() + (1000*3600*48); // set the countdown date
+var days, hours, minutes, seconds; // variables for time units
+
+var countdown = document.getElementById("tiles"); // get tag element
+
+getCountdown();
+
+setInterval(function () { getCountdown(); }, 1000);
+
+function getCountdown(){
+
+  // find the amount of "seconds" between now and target
+  var current_date = new Date().getTime();
+  var seconds_left = (target_date - current_date) / 1000;
+
+  days = pad( parseInt(seconds_left / 86400) );
+  seconds_left = seconds_left % 86400;
+     
+  hours = pad( parseInt(seconds_left / 3600) );
+  seconds_left = seconds_left % 3600;
+      
+  minutes = pad( parseInt(seconds_left / 60) );
+  seconds = pad( parseInt( seconds_left % 60 ) );
+
+  // format countdown string + set tag value
+  countdown.innerHTML = "<span>" + days + "</span><span>" + hours + "</span><span>" + minutes + "</span><span>" + seconds + "</span>"; 
+}
+
+function pad(n) {
+  return (n < 10 ? '0' : '') + n;
+}
+
+
+
+   </script>
 
 </body>
 
