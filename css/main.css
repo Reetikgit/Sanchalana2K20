@@ -1290,7 +1290,7 @@ ul#nav li.current a:after {
 #hero #more {
 	position: absolute;
 	left: 50%;
-	bottom:40px;
+	bottom:15px;
 	margin-left: 250px;
 }
 

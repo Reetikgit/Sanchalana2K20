@@ -194,8 +194,8 @@
 					   <!-- slide -->
 					   <li>
 						   <div class="flex-caption">
-								<h1 class="">Take a look at some of <a class="smoothscroll" href="#portfolio" title="portfolio" >our Events</a> or 
-								<a class="smoothscroll" href="#contact" title="contact us">get in touch</a> to discuss how we can help you.</h1>
+								<h1 class="">Take a look at some of <a class="smoothscroll" href="#portfolio" title="portfolio" style="color: cyan" >our Events</a> or 
+								<a class="smoothscroll" href="#contact" title="contact us" style="color: cyan" >get in touch</a> to discuss how we can help you.</h1>
 
 								<h3 class=""></h3>			   
 							</div>
@@ -1051,7 +1051,7 @@
 
 <script type="text/javascript">
   /*Script for countdown timer*/    
-var target_date = new Date("Jan 13, 2020 17:55:25").getTime(); // set the countdown date
+var target_date = new Date("Jan 16, 2020 17:55:25").getTime(); // set the countdown date
 var days, hours, minutes, seconds; // variables for time units
 
 var countdown = document.getElementById("tiles"); // get tag element
@@ -1076,7 +1076,7 @@ function getCountdown(){
   seconds = pad( parseInt( seconds_left % 60 ) );
 
   // format countdown string + set tag value
-  countdown.innerHTML = "<span>" + days + "</span><span>" + hours + "</span><span>" + minutes + "</span><span>" + seconds + "</span>"; 
+  countdown.innerHTML = "<span>" + days+"<h5>Day</h5>" + "</span><span>" + hours+"<h5>Hr</h5> "+"</span><span>" + minutes +"<h5>min</h5> "+ "</span><span>" + seconds +"<h5>sec</h5> "+ "</span>"; 
   if ( seconds_left < 0) {
    
       countdown.innerHTML = "<span>" + "<h5>Day</h5>" + "</span><span>" + "O" + "</span><span>" + "N" + "</span><span>" + "E" + "</span>"; 
