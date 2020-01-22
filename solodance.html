@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Solo Singing</title>
+		<title>Solo dance</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- MATERIAL DESIGN ICONIC FONT -->
@@ -14,7 +14,7 @@
 
 	<body>
 
-		<div class="wrapper" style="background-image: url('images/solosinging.jpg');">
+		<div class="wrapper" style="background-image: url('images/solodance.jpg');">
 			<div class="inner">
 				<form action="" method="POST" id="registrationform">
 					<h3 style="color: white">Registration Form</h3>
@@ -35,7 +35,7 @@
 					<div class="form-wrapper">
 						<label for="">Event</label>
 
-						<input type="text"  id="event" class="form-control" value="soloSinging" readonly required="required" style="color: white">
+						<input type="text"  id="event" class="form-control" value="soloDance" readonly required="required" style="color: white">
 					</div>
 					<div class="form-wrapper">
 						<label for="">Phone</label>
@@ -45,7 +45,7 @@
 				
 					<label for="">Branch</label>
 					<div>
-						<select  name="service" class="form-control" id="branch" style="color:black">
+						<select  name="service" class="form-control" id="branch" style="color:orange">
 							<option>ISE</option>
 							<option>CSE</option>
 							<option>EEE</option>
@@ -61,7 +61,7 @@
 				<div class="form-wrapper">
 					<span class="label-input100">Semester</span>
 					<div>
-						<select class="form-control" name="budget"  id="sem" style="color:black">
+						<select class="form-control" name="budget"  id="sem" style="color:orange">
 							<option>2</option>
 							<option>4</option>
 							<option>6</option>
@@ -97,7 +97,7 @@
   
 //Reference for form collection(3)
 // let formMessage = firebase.database().ref('register');
-let formMessage = firebase.database().ref('SoloSinging');
+let formMessage = firebase.database().ref('SoloDance');
 
 document
   .getElementById('registrationform')
