@@ -102,6 +102,8 @@ let formMessage = firebase.database().ref('SoloSinging');
 document
   .getElementById('registrationform')
   .addEventListener('submit', formSubmit);
+  let random ='2k20'+''+Math.floor((Math.random() * 100) + 1);
+  alert (random);
 
 function formSubmit(e) {
   e.preventDefault();
@@ -113,8 +115,9 @@ function formSubmit(e) {
   let phn = document.querySelector('#phn').value;
   let branch = document.querySelector('#branch').value;
   let sem = document.querySelector('#sem').value;
+  let random =2020+Math.random();
   //send message values
-  sendMessage(name, usn, email,event, phn, branch, sem);
+  sendMessage(name, usn, email,event, phn, branch, sem, random);
 
   //Show Alert Message(5)
   
@@ -130,7 +133,7 @@ function formSubmit(e) {
 
 //Send Message to Firebase(4)
 
-function sendMessage(name,usn, email,event, phn, branch, sem) {
+function sendMessage(name,usn, email,event, phn, branch, sem, random) {
   let newFormMessage = formMessage.push();
   newFormMessage.set({
     name: name,
@@ -139,7 +142,8 @@ function sendMessage(name,usn, email,event, phn, branch, sem) {
     event: event,
     phn:phn,
     branch: branch,
-    sem:sem
+    sem:sem,
+    random:random
 
   });
   alert("Registration successfull");

@@ -1,0 +1,26 @@
+{
+  "name": "techvidya",
+  "version": "1.0.0",
+  "description": "This website was created by Reetik who is student of SVIT, sttuding in ISE.\r It was cteated on occasion of Techvidya WebDevelopment compation in which this website won the first prize.",
+  "main": "init-firebase.js",
+  "dependencies": {
+    "firebase-admin": "^8.8.0",
+    "nodemailer": "^6.4.0",
+    "plivo": "^4.1.7",
+    "springedge": "^1.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Reetikgit/Techvidya.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Reetikgit/Techvidya/issues"
+  },
+  "homepage": "https://github.com/Reetikgit/Techvidya#readme"
+}
