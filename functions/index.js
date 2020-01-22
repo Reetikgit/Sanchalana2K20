@@ -41,7 +41,7 @@ exports.sendEmail = functions.database.ref('/SoloSinging/{pushID}')
   // Building Email message.
   mailOptions.subject = 'Sanchalana 2k20 ';
  //for example
-  mailOptions.text = 'Welcome '+val.usn+' '+'Your registration has been confirmed'+ ' Your unique Id is'+''+ val.random;
+  mailOptions.text = 'Welcome '+val.usn+' '+'Your registration has been confirmed'+ ' Your unique Id is'+' '+ val.random;
 
   try {
     console.log(val.email);
