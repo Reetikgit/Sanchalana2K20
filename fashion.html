@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Solo dance</title>
+		<title>Solo Singing</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- MATERIAL DESIGN ICONIC FONT -->
@@ -14,7 +14,7 @@
 
 	<body>
 
-		<div class="wrapper" style="background-image: url('images/solodance.jpg');">
+		<div class="wrapper" style="background-image: url('images/svitidol.jpg');">
 			<div class="inner">
 				<form action="" method="POST" id="registrationform">
 					<h3 style="color: white">Registration Form</h3>
@@ -35,7 +35,7 @@
 					<div class="form-wrapper">
 						<label for="">Event</label>
 
-						<input type="text"  id="event" class="form-control" value="soloDance" readonly required="required" style="color: white">
+						<input type="text"  id="event" class="form-control" value="FashionShow" readonly required="required" style="color: white">
 					</div>
 					<div class="form-wrapper">
 						<label for="">Phone</label>
@@ -78,6 +78,7 @@
 	</body>
 	  <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
   <script type="text/javascript">
+
   
  
   var firebaseConfig = {
@@ -96,14 +97,14 @@
   
 //Reference for form collection(3)
 // let formMessage = firebase.database().ref('register');
-let formMessage = firebase.database().ref('SoloDance');
+let formMessage = firebase.database().ref('FaishonShow');
 let formMessage2 = firebase.database().ref('common');
 document
   .getElementById('registrationform')
   .addEventListener('submit', formSubmit,formSubmit2);
   
   database=firebase.database();
-  var ref=database.ref('SoloDance');
+  var ref=database.ref('FaishonShow');
   var ref2=database.ref('common');
  // var keys;
   ref.on('value',gotData,errData);
@@ -128,7 +129,7 @@ document
 
      sc2=data.val();
     
-     keys2=Object.keys(sc);
+     keys2=Object.keys(sc2);
    
     
      
@@ -239,6 +240,7 @@ for(var i=0;i<keys2.length;i++)
       initials=sc2[k].name;
       var emails=sc2[k].email;
       usnD=sc2[k].usn;
+      
 
 
       if(usnD==usnmatch)
@@ -274,6 +276,10 @@ for(var i=0;i<keys2.length;i++)
     else
     {
         alert("Usn already exsits")
+
+    }
+    if(match>0)
+    {
 
     }
 

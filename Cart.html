@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/vendor.min.css">
+   <link rel="stylesheet" href="css/main.css">  
+   <script src="js/modernizr.js"></script>
+   <link rel="stylesheet" href="cssP/style.css">
+     <link href='https://fonts.googleapis.com/css?family=Permanent+Marker:400' rel='stylesheet' type='text/css'>
+<body>
+
+<header id="main-header">
+
+    <div class="row">
+
+        <div class="logo">
+           <a href="index.html"><h2  style=" font-family: Permanent Marker, sans-serif;">Sanchalana</h3></a>
+        </div>
+
+        <nav id="nav-wrap">         
+           
+           <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+            <span class="menu-icon">Menu</span>
+           </a>
+          <a class="mobile-btn" href="#" title="Hide navigation">
+            <span class="menu-icon">Menu</span>
+          </a>            
+
+           <ul id="nav" class="nav">
+              <li><a class="smoothscroll" href="#hero">Home.</a></li>
+             <li class="current"><a class="smoothscroll" href="#portfolio">About</a></li>
+              <li><a class="smoothscroll" href="#portfolio">Events</a></li>
+              <li><a class="smoothscroll" href="#about">Register</a></li>
+              <li><a class="smoothscroll" href="#contact">Contact.</a></li>
+           </ul> <!-- end #nav -->
+
+        </nav> <!-- end #nav-wrap -->
+
+        <ul class="header-social">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+        </ul>      
+
+     </div>
+
+   </header> <!-- end header -->
+   <br>
+   <br>
+<div class="w3-content">
+
+<div class="wrapper" style="background-image: url('images/cse.jpg')";>
+      <div class="inner">
+        <form action="#"  id="registrationform">
+          <h3 style="color: white">Enter your User Id(Sent through email)</h3>
+          <div class="form-group">
+            <div class="form-wrapper">
+              <label for="" style="color: white">User Id</label>
+              <input type="text" id="name" class="form-control" required="Please enter your name" style="color: orange">
+            </div>
+          
+          </div>
+           
+       <button type="submit" onclick="gotDatas()" >Search</button>
+        </form>
+    
+<div class="w3-row w3-margin">
+<!-- 
+<div class="w3-third" id="events" style="visibility:visible;">
+  <img src="img_5terre.jpg" style="width:100%;min-height:200px">
+</div> -->
+<div class="w3-twothird w3-container w3-right">
+  <h2 style="">Your Events </h2>
+  <br>
+<!--   <p id="names" style="color: black;font-size:2.5em;"></p>
+    
+    <br>
+  <p style="color: black;font-size:2.5em;" id="usn"></p>
+    -->
+  <!-- <p style="color: black;font-size:2.5em; border: 2px solid cyan;background-color: white ;border-radius: 50px;" id="events"></p> -->
+  <ol id="output">
+  </ol>
+  </p>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+   <div id="preloader"> 
+      <div id="loader">
+         <img src="images/icon2.png" style="width:100%;margin:20px 0" alt="Blog Template">
+      </div>
+   </div> 
+
+   <!-- Java Script
+   ================================================== --> 
+   <script src="js/jquery-1.11.3.min.js"></script>
+   <script src="js/jquery-migrate-1.2.1.min.js"></script>
+   <script src="js/jquery.flexslider-min.js"></script>
+   <script src="js/jquery.waypoints.min.js"></script>
+   <script src="js/jquery.validate.min.js"></script>
+   <script src="js/jquery.fittext.js"></script>
+   <script src="js/jquery.placeholder.min.js"></script>
+   <script src="js/jquery.magnific-popup.min.js"></script>  
+   <script src="js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+   <script type="text/javascript">
+
+     
+    
+    
+
+     
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyB_5vqcnQ7sD2AsHeBRl2QB6GifZmp8jGM",
+    authDomain: "contactform-673b7.firebaseapp.com",
+    databaseURL: "https://contactform-673b7.firebaseio.com",
+    projectId: "contactform-673b7",
+    storageBucket: "",
+    messagingSenderId: "172917494368",
+    appId: "1:172917494368:web:1cc301177c4f4fd6a46905",
+    measurementId: "G-N5BDJDDC63"
+
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+//Reference for form collection(3)
+// let formMessage = firebase.database().ref('register');
+// let formMessage = firebase.database().ref('/');
+
+document
+  .getElementById('registrationform')
+  .addEventListener('submit', gotData);
+  
+  
+  database=firebase.database();
+  var ref=database.ref('common');
+ // var keys;
+  ref.on('value',gotData,errData);
+   var initials;
+   var count;
+   var match=0,usnD,sc;
+   var keys;
+   var len=0;
+  function gotData(data)
+  {
+
+     sc=data.val();
+   
+     keys=Object.keys(sc);
+   
+    
+    }
+    function gotDatas()
+    {
+
+     let userid = document.querySelector('#name').value;
+     var capsusn=userid.toUpperCase();
+      $("#output").empty();
+
+  //send message values
+  // sendMessage(name, usn, email,event, phn, branch, sem, random);
+
+  
+  /*Fetching the elements from each object*/
+  match=0;
+  
+  for(var i=0;i<keys.length;i++)
+  {
+      
+      
+      var k=keys[i];
+
+      var names=sc[k].name;
+      var emails=sc[k].email;
+      var usn=sc[k].usn;
+      var random=sc[k].random;
+      var event=sc[k].event;
+   
+
+  
+
+     if(capsusn==usn)
+       {
+        match++;
+        console.log(event)
+        
+        // document.getElementById("names").innerHTML =event;
+        $("#output").append('<p id="abc" style="font-size:2em; color:orange;border: 2px solid cyan;background-color: white ;border-radius: 50px;">' + event + '</p>');
+
+
+        // document.getElementById("names").innerHTML = event;
+  
+        // document.getElementById("names").innerHTML = event;
+
+
+
+        
+       // $("#output").empty();
+       // var li=document.createElement('li',usn+' '+initials);
+       //   li.parent('events');
+       }
+     }
+  
+
+       if(match==0)
+       {
+        $("#output").empty();
+        $("#output").append('<p id="abc" style="font-size:2em; color:white">' + "No events found" + '</p>');
+       }
+       
+       
+
+   }
+  
+ 
+  
+    function errData(err)
+  {
+    console.log('error');
+    console.log(err);
+  }
+
+
+   
+      
+
+     //datadisplay.append(li);
+   
+    
+
+  //Show Alert Message(5)
+  
+
+  //Hide Alert Message After Seven Seconds(6)
+ 
+  //Form Reset After Submission(7)
+
+
+
+//Send Message to Firebase(4)
+
+
+
+
+
+
+
+//Send Message to Firebase(4)
+
+
+   </script>
+
+</body>
+</html>

@@ -98,19 +98,21 @@
 //Reference for form collection(3)
 // let formMessage = firebase.database().ref('register');
 let formMessage = firebase.database().ref('SoloSinging');
-
+let formMessage2 = firebase.database().ref('common');
 document
   .getElementById('registrationform')
-  .addEventListener('submit', formSubmit);
+  .addEventListener('submit', formSubmit,formSubmit2);
   
   database=firebase.database();
   var ref=database.ref('SoloSinging');
+  var ref2=database.ref('common');
  // var keys;
   ref.on('value',gotData,errData);
+  ref2.on('value',gotData2,errData);
    var initials;
    var count;
-   var match=0,usnD,sc;
-   var keys;
+   var match=0,usnD,sc,sc2;
+   var keys,keys2;
    var len=0;
   function gotData(data)
   {
@@ -119,6 +121,16 @@ document
     
      keys=Object.keys(sc);
      l=keys.length;
+    
+     
+   }
+   function gotData2(data)
+  {
+
+     sc2=data.val();
+    
+     keys2=Object.keys(sc);
+   
     
      
    }
@@ -203,11 +215,102 @@ for(var i=0;i<keys.length;i++)
 
 }
 
+function formSubmit2(e) {
+  e.preventDefault();
+  // Get Values from the DOM
+  let name = document.querySelector('#name').value;
+  var usn = document.querySelector('#usn').value;
+  let email = document.querySelector('#email').value;
+  let event = document.querySelector('#event').value;
+  let phn = document.querySelector('#phn').value;
+  let branch = document.querySelector('#branch').value;
+  let sem = document.querySelector('#sem').value;
+  let random ='2k20'+''+Math.floor((Math.random() * 1000) + 1);
+  //send message values
+  // sendMessage(name, usn, email,event, phn, branch, sem, random);
+  usnmatch=usn.toUpperCase();
+  
+  /*Fetching the elements from each object*/
+
+for(var i=0;i<keys2.length;i++)
+  {
+      match=0;
+      
+      var k=keys2[i];
+      initials=sc2[k].name;
+      var emails=sc2[k].email;
+      usnD=sc2[k].usn;
+      
+
+
+      if(usnD==usnmatch)
+      {
+
+          match++;
+          keyss=0;
+          break;
+      }
+   }
+
+     //datadisplay.append(li);
+    var usnvalid="1va1";
+    
+    if(match==0)
+    {
+      if(usn.includes("1va1")||usn.includes("1VA1")||usn.includes("1Va1")||usn.includes("1vA1"))
+      {
+         
+          
+            sendMessage(name,usn.toUpperCase(),email,event,phn,branch,sem,random);
+            alert("Registration successfull. Check your college email id for the confirmation.");
+            document.getElementById('registrationform').reset();
+  			window.location = "index.html#portfolio"         
+          
+          
+      }
+      else
+      {
+         alert("Please enter a valid USN")
+      }
+    } 
+    else
+    {
+        alert("Usn already exsits")
+
+    }
+    if(match>0)
+    {
+
+    }
+
+  //Show Alert Message(5)
+  
+
+  //Hide Alert Message After Seven Seconds(6)
+  setTimeout(function() {
+    
+  }, 7000);
+
+  //Form Reset After Submission(7)
+
+}
 //Send Message to Firebase(4)
 
 function sendMessage(name,usn, email,event, phn, branch, sem, random) {
   let newFormMessage = formMessage.push();
+  let newFormMessage2 = formMessage2.push();
   newFormMessage.set({
+    name: name,
+    usn: usn,
+    email: email,
+    event: event,
+    phn:phn,
+    branch: branch,
+    sem:sem,
+    random:random
+
+  });
+  newFormMessage2.set({
     name: name,
     usn: usn,
     email: email,
