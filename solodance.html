@@ -70,7 +70,7 @@
 					</div>
 					<span class="focus-input100"></span>
 				</div>
-					<button sendMessage()>Register Now</button>
+					<button id="btns" sendMessage()>Register Now</button>
 				</form>
 			</div>
 		</div>
@@ -100,7 +100,7 @@ let formMessage = firebase.database().ref('SoloDance');
 let formMessage2 = firebase.database().ref('common');
 document
   .getElementById('registrationform')
-  .addEventListener('submit', formSubmit,formSubmit2);
+  .addEventListener('submit', formSubmit);
   
   database=firebase.database();
   var ref=database.ref('SoloDance');
@@ -113,6 +113,9 @@ document
    var match=0,usnD,sc,sc2;
    var keys,keys2;
    var len=0;
+   var btn=document.getElementById('btns');
+  btn.addEventListener("click", formSubmit);
+
   function gotData(data)
   {
 
@@ -153,7 +156,7 @@ function formSubmit(e) {
   //send message values
   // sendMessage(name, usn, email,event, phn, branch, sem, random);
   usnmatch=usn.toUpperCase();
-  
+  let payment='not paid';
   /*Fetching the elements from each object*/
 
 for(var i=0;i<keys.length;i++)
@@ -182,12 +185,28 @@ for(var i=0;i<keys.length;i++)
     {
       if(usn.includes("1va1")||usn.includes("1VA1")||usn.includes("1Va1")||usn.includes("1vA1"))
       {
-         
-          
-            sendMessage(name,usn.toUpperCase(),email,event,phn,branch,sem,random);
-            alert("Registration successfull. Check your college email id for the confirmation.");
-            document.getElementById('registrationform').reset();
-  			window.location = "index.html#portfolio"         
+         if(email.includes("@saividya.ac.in")||usn.includes("@SAIVIDYA.AC.IN"))
+      		{
+      			if(!(phn.length<10||phn.length>10))
+        		{
+
+            	sendMessage(name,usn.toUpperCase(),email,event,phn,branch,sem,random,payment);
+              // btn.addEventListener("click", formSubmit2);
+              	formSubmit2.call();
+          		}
+          		 else
+       			 {
+          			alert("Please enter a valid PhoneNumber")
+        		}
+        	} 
+          else
+          {
+          	alert("Please enter your college mail id")
+          }
+
+            // alert("Registration successfull. Check your college email id for the confirmation.");
+     //        document.getElementById('registrationform').reset();
+  			// window.location = "index.html#portfolio"         
           
           
       }
@@ -196,9 +215,11 @@ for(var i=0;i<keys.length;i++)
          alert("Please enter a valid USN")
       }
     } 
-    else
+    if(match==1)
     {
-        alert("Usn already exsits")
+        alert("Usn already Registered for this event");
+
+        
 
     }
 
@@ -214,8 +235,9 @@ for(var i=0;i<keys.length;i++)
 
 }
 
-function formSubmit2(e) {
-  e.preventDefault();
+function formSubmit2() {
+
+  // e.preventDefault();
   // Get Values from the DOM
   let name = document.querySelector('#name').value;
   var usn = document.querySelector('#usn').value;
@@ -228,38 +250,31 @@ function formSubmit2(e) {
   //send message values
   // sendMessage(name, usn, email,event, phn, branch, sem, random);
   usnmatch=usn.toUpperCase();
+  let payment='not paid';
   
   /*Fetching the elements from each object*/
 
-for(var i=0;i<keys2.length;i++)
+for(var i=0;i<keys.length;i++)
   {
-      match=0;
+     
       
-      var k=keys2[i];
-      initials=sc2[k].name;
-      var emails=sc2[k].email;
-      usnD=sc2[k].usn;
+      var k=keys[i];
+      initials=sc[k].name;
+      var emails=sc[k].email;
+      usnD=sc[k].usn;
 
-
-      if(usnD==usnmatch)
-      {
-
-          match++;
-          keyss=0;
-          break;
-      }
-   }
+}
+    
 
      //datadisplay.append(li);
     var usnvalid="1va1";
     
-    if(match==0)
-    {
+    
       if(usn.includes("1va1")||usn.includes("1VA1")||usn.includes("1Va1")||usn.includes("1vA1"))
       {
          
           
-            sendMessage(name,usn.toUpperCase(),email,event,phn,branch,sem,random);
+            sendMessage2(name,usn.toUpperCase(),email,event,phn,branch,sem,random,payment);
             alert("Registration successfull. Check your college email id for the confirmation.");
             document.getElementById('registrationform').reset();
   			window.location = "index.html#portfolio"         
@@ -271,11 +286,7 @@ for(var i=0;i<keys2.length;i++)
          alert("Please enter a valid USN")
       }
     } 
-    else
-    {
-        alert("Usn already exsits")
-
-    }
+   
 
   //Show Alert Message(5)
   
@@ -287,12 +298,12 @@ for(var i=0;i<keys2.length;i++)
 
   //Form Reset After Submission(7)
 
-}
+
 //Send Message to Firebase(4)
 
-function sendMessage(name,usn, email,event, phn, branch, sem, random) {
+function sendMessage(name,usn, email,event, phn, branch, sem, random,payment) {
   let newFormMessage = formMessage.push();
-  let newFormMessage2 = formMessage2.push();
+ 
   newFormMessage.set({
     name: name,
     usn: usn,
@@ -304,6 +315,9 @@ function sendMessage(name,usn, email,event, phn, branch, sem, random) {
     random:random
 
   });
+}
+function sendMessage2(name,usn, email,event, phn, branch, sem, random,payment) {
+  let newFormMessage2 = formMessage2.push();
   newFormMessage2.set({
     name: name,
     usn: usn,
@@ -312,7 +326,9 @@ function sendMessage(name,usn, email,event, phn, branch, sem, random) {
     phn:phn,
     branch: branch,
     sem:sem,
-    random:random
+    random:random,
+    Payment:payment
+
 
   });
 

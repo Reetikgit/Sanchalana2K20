@@ -183,6 +183,8 @@ document
       var usn=sc[k].usn;
       var random=sc[k].random;
       var event=sc[k].event;
+      var payment=sc[k].Payment;
+      var email=sc[k].email;
    
 
   
@@ -190,10 +192,10 @@ document
      if(capsusn==usn)
        {
         match++;
-        console.log(event)
+        
         
         // document.getElementById("names").innerHTML =event;
-        $("#output").append('<p id="abc" style="font-size:2em; color:orange;border: 2px solid cyan;background-color: white ;border-radius: 50px;">' + event + '</p>');
+        $("#output").append('<p id="abc" style="font-size:2em; color:orange;border: 2px solid cyan;background-color: white ;border-radius: 50px; ">' + '<h2 style="color:white;">'+"Event name: "+event + '<br>'+"Payment: "+payment+ '<br></h2>'+"Registered through: "+email+'</p><br>');
 
 
         // document.getElementById("names").innerHTML = event;
