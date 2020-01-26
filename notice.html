@@ -1,6 +1,34 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS</title>
+<title>Notice Board</title>
+
+<head>
+
+  <meta charset="utf-8">
+  <title>Sanchalana</title>
+  <meta name="description" content="">  
+  <meta name="author" content="">
+
+   <!-- mobile specific metas
+   ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href='https://fonts.googleapis.com/css?family=Permanent+Marker:400' rel='stylesheet' type='text/css'>
+
+  <!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/vendor.min.css">
+   <link rel="stylesheet" href="css/main.css">     
+
+   <!-- script
+   ================================================== -->
+  <script src="js/modernizr.js"></script>
+
+   <!-- favicons
+  ================================================== -->
+  <link rel="shortcut icon" href="favicon.png" >
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="css/base.css">
@@ -9,6 +37,7 @@
    <script src="js/modernizr.js"></script>
    <link rel="stylesheet" href="cssP/style.css">
      <link href='https://fonts.googleapis.com/css?family=Permanent+Marker:400' rel='stylesheet' type='text/css'>
+   </head>
 <body>
 
 <header id="main-header">
@@ -49,11 +78,11 @@
    </header> <!-- end header -->
    <br>
    <br>
-<div class="w3-content">
+<!-- <div class="w3-content">
 
-<div class="wrapper" style="background-image: url('images/panel.jpg')";>
+<div class="wrapper" style="background-image: url('images/cse.jpg')";>
       <div class="inner">
-        <form   id="registrationform">
+        <form action="#"  id="registrationform">
           <h3 style="color: white">Enter your User Id(Sent through email)</h3>
           <div class="form-group">
             <div class="form-wrapper">
@@ -64,15 +93,17 @@
           </div>
            
        <button type="submit" onclick="gotDatas()" >Search</button>
-        </form>
-    
+        </form> -->
+
 <div class="w3-row w3-margin">
 <!-- 
 <div class="w3-third" id="events" style="visibility:visible;">
-  <img src="img_5terre.jpg" style="width:100%;min-height:200px">
+  <img src="img_5terre.jpg" style="width:100%;min-height:200px"
 </div> -->
+<br><br>
+<div class="wrapper" style="background-image: url('images/notice.jpg');">
 <div class="w3-twothird w3-container w3-right">
-  <h2 style="">Your Events </h2>
+  <h2 style="">Sanchalana Board </h2>
   <br>
 <!--   <p id="names" style="color: black;font-size:2.5em;"></p>
     
@@ -80,7 +111,7 @@
   <p style="color: black;font-size:2.5em;" id="usn"></p>
     -->
   <!-- <p style="color: black;font-size:2.5em; border: 2px solid cyan;background-color: white ;border-radius: 50px;" id="events"></p> -->
-  <ol id="output">
+  <ol id="output" style="padding-right:0%;">
   </ol>
   </p>
 </div>
@@ -96,6 +127,7 @@
          <img src="images/icon2.png" style="width:100%;margin:20px 0" alt="Blog Template">
       </div>
    </div> 
+
 
    <!-- Java Script
    ================================================== --> 
@@ -131,17 +163,10 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   
-//Reference for form collection(3)
-// let formMessage = firebase.database().ref('register');
-// let formMessage = firebase.database().ref('/');
 
-document
-  .getElementById('registrationform')
-  .addEventListener('submit', gotData);
-  
   
   database=firebase.database();
-  var ref=database.ref('common');
+  var ref=database.ref('noticeboard');
  // var keys;
   ref.on('value',gotData,errData);
    var initials;
@@ -157,14 +182,9 @@ document
      keys=Object.keys(sc);
    
     
-    }
-    function gotDatas()
-    {
 
-     let userid = document.querySelector('#name').value;
-     var capsusn=userid.toUpperCase();
+    
       $("#output").empty();
-
   //send message values
   // sendMessage(name, usn, email,event, phn, branch, sem, random);
 
@@ -172,56 +192,33 @@ document
   /*Fetching the elements from each object*/
   match=0;
   
-  for(var i=0;i<keys.length;i++)
+  for(var i=keys.length-1;i>=0;i--)
   {
       
-      
+      match++;
       var k=keys[i];
 
-      var names=sc[k].name;
-      var emails=sc[k].email;
-      var usn=sc[k].usn;
-      var random=sc[k].random;
+      var name=sc[k].name;
       var event=sc[k].event;
-      var payment=sc[k].Payment;
-      var email=sc[k].email;
-   
-
+      var notice=sc[k].notice;
   
 
-     if(capsusn==usn)
-       {
-        match++;
-        
-        
         // document.getElementById("names").innerHTML =event;
-        $("#output").append('<p id="abc" style="font-size:2em; color:orange;border: 2px solid cyan;background-color: white ;border-radius: 50px; ">' + '<h2 style="color:white;">'+"Event name: "+event + '<br>'+"Payment: "+payment+ '<br></h2>'+"Registered through: "+email+'</p><br>');
+        $("#output").append('<p id="abc" style="font-size:2em; color:yellow;border: 9px inset gray;background-color: white ;border-radius: 100px; overflow:hidden; ">' + '<h2 style="color:white;font-size:1em">'+"Coordinator name: "+name + '<br>'+"Related to: "+event+ '<br>'+"Notice: "+notice+'</p><br></h2>');
 
-
-        // document.getElementById("names").innerHTML = event;
   
-        // document.getElementById("names").innerHTML = event;
-
-
-
-        
-       // $("#output").empty();
-       // var li=document.createElement('li',usn+' '+initials);
-       //   li.parent('events');
-       }
-     }
-  
-
-       if(match==0)
+  }
+    if(match==0)
        {
         $("#output").empty();
-        $("#output").append('<p id="abc" style="font-size:2em; color:white">' + "No events found" + '</p>');
-       }
+        $("#output").append('<p id="abc" style="font-size:2em; color:white">' + "No notice found" + '</p>');
+       }  
+
        
        
 
    }
-  
+    
  
   
     function errData(err)
@@ -229,33 +226,6 @@ document
     console.log('error');
     console.log(err);
   }
-
-
-   
-      
-
-     //datadisplay.append(li);
-   
-    
-
-  //Show Alert Message(5)
-  
-
-  //Hide Alert Message After Seven Seconds(6)
- 
-  //Form Reset After Submission(7)
-
-
-
-//Send Message to Firebase(4)
-
-
-
-
-
-
-
-//Send Message to Firebase(4)
 
 
    </script>
