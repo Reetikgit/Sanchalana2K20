@@ -42,7 +42,7 @@ exports.solosinging = functions.database.ref('/SoloSinging/{pushID}')
   // Building Email message.
   mailOptions.subject = 'Sanchalana 2k20 ';
  //for example
-  mailOptions.text = 'Welcome '+val.usn+' '+'Your registration has been confirmed'+ ' Your unique Id is'+' '+ val.random;
+  mailOptions.text ='Welcome '+val.name+' '+'Your registration for the event'+' '+val.event+' '+ 'with USN'+' '+val.usn+' '+ 'has been confirmed'+ ' Your unique Id is'+' '+ val.random;
 
   try {
     console.log(val.email);
@@ -69,7 +69,63 @@ exports.solosinging = functions.database.ref('/SoloSinging/{pushID}')
   // Building Email message.
   mailOptions.subject = 'Sanchalana 2k20 ';
  //for example
-  mailOptions.text = 'Welcome '+val.usn+' '+'Your registration has been confirmed'+ ' Your unique Id is'+' '+ val.random;
+  mailOptions.text = 'Welcome '+val.name+' '+'Your registration for the event'+' '+val.event+' '+ 'with USN'+' '+val.usn+' '+ 'has been confirmed'+ ' Your unique Id is'+' '+ val.random;
+
+  try {
+    console.log(val.email);
+    await transporter.sendMail(mailOptions);
+    console.log('email sent to:', val.email);
+    transporter.close();
+    console.log(val.email)
+  } catch(error) {
+    console.error('There was an error while sending the email:'+val.email, error);
+  }
+  return null;
+});
+
+
+exports.instrumental = functions.database.ref('/SoloSinging/{pushID}')
+
+    .onWrite(async (change) => {
+         const snapshot = change.after;
+  const val = snapshot.val();
+
+  const mailOptions = {
+    from: '"Reetik " <reetikchitragupt@gmail.com>',
+    to: val.email,
+  };
+
+  // Building Email message.
+  mailOptions.subject = 'Sanchalana 2k20 ';
+ //for example
+  mailOptions.text = 'Welcome '+val.name+' '+'Your registration for the event'+' '+val.event+' '+ 'with USN'+' '+val.usn+' '+ 'has been confirmed'+ ' Your unique Id is'+' '+ val.random;
+
+  try {
+    console.log(val.email);
+    await transporter.sendMail(mailOptions);
+    console.log('email sent to:', val.email);
+    transporter.close();
+    console.log(val.email)
+  } catch(error) {
+    console.error('There was an error while sending the email:'+val.email, error);
+  }
+  return null;
+});
+    exports.solodance = functions.database.ref('/SoloDance/{pushID}')
+
+    .onWrite(async (change) => {
+         const snapshot = change.after;
+  const val = snapshot.val();
+
+  const mailOptions = {
+    from: '"Reetik " <reetikchitragupt@gmail.com>',
+    to: val.email,
+  };
+
+  // Building Email message.
+  mailOptions.subject = 'Sanchalana 2k20 ';
+ //for example
+  mailOptions.text = 'Welcome '+val.name+' '+'Your registration for the event'+' '+val.event+' '+ 'with USN'+' '+val.usn+' '+ 'has been confirmed'+ ' Your unique Id is'+' '+ val.random;
 
   try {
     console.log(val.email);
