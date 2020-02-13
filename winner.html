@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Notice Board</title>
+<title>Winner Board</title>
 
 <head>
 
@@ -101,9 +101,9 @@
   <img src="img_5terre.jpg" style="width:100%;min-height:200px"
 </div> -->
 <br><br>
-<div class="wrapper" style="background-image: url('images/notice.jpg');">
+<div class="wrapper" style="background-image: url('images/treasure.jpg');">
 <div class="w3-twothird w3-container w3-right">
-  <h3 id="text1" style="color: cyan;margin-left:20%;">Loading..... </h2>
+  <h3 id="text1" style="margin-left:30%;color: cyan">Loading....</h2>
   <br>
 <!--   <p id="names" style="color: black;font-size:2.5em;"></p>
     
@@ -166,7 +166,7 @@
 
   
   database=firebase.database();
-  var ref=database.ref('noticeboard');
+  var ref=database.ref('Winners');
  // var keys;
   ref.on('value',gotData,errData);
    var initials;
@@ -197,14 +197,28 @@
       
       match++;
       var k=keys[i];
-
-      var name=sc[k].name;
       var event=sc[k].event;
-      var notice=sc[k].notice;
+      var n1=sc[k].name1;
+      var n2=sc[k].name2;
+      var n3=sc[k].name3;
+
+      var u1=sc[k].usn1;
+      var u2=sc[k].usn2;
+      var u3=sc[k].usn3;
+
+      var b1=sc[k].branch1;
+      var b2=sc[k].branch2;
+      var b3=sc[k].branch3;
+
+      var c1=sc[k].credit1;
+      var c2=sc[k].credit1;
+      var c3=sc[k].credit1;
+
+    
   
 
         // document.getElementById("names").innerHTML =event;
-        $("#output").append('<p id="abc" style="font-size:2em; color:yellow;border: 9px inset gray;background-color: white ;border-radius: 100px;">' + '<h2 style="color:white;font-size:1em">'+"Coordinator name: "+name + '<br>'+"Related to: "+event+ '<br>'+"Notice: "+notice+'</p><br></h2>');
+        $("#output").append('<p id="abc" style="font-size:2em;font-weight:100px; color:Blue;border: 3px inset white;background-color:teal ;border-radius:0px;">'+event + '<h2 style="color:#fff;font-size:1em">'+"First place: &nbsp;"+n1 +'<br>'+"Branch:&nbsp;&nbsp;"+b1+'<br>'+"USN:&nbsp;&nbsp;"+u1+'<hr>'+"Second place: &nbsp;"+n2 +'<br>'+"Branch:&nbsp;&nbsp;"+b2+'<br>'+"USN:&nbsp;&nbsp;"+u2+'<br><hr>'+"Third place: &nbsp;"+n3 +'<br>'+"Branch:&nbsp;&nbsp;"+b3+'<br>'+"USN:&nbsp;&nbsp;"+u3+'</p></h2>'+'<hr>');
 
   
   }
@@ -213,8 +227,8 @@
         $("#output").empty();
         $("#output").append('<p id="abc" style="font-size:2em; color:white">' + "No notice found" + '</p>');
        }  
-
-       document.getElementById("text1").innerHTML="Sanchalana Board";
+      document.getElementById("text1").innerHTML="You Rock";
+       
        
 
    }

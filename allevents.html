@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<script> window._izq = window._izq || []; window._izq.push(["init" ]); </script> <script src="https://cdn.izooto.com/scripts/36daa3901f3d53dbe3974c7823b9659eb0e0b357.js"></script>
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+  <meta charset="utf-8">
+	<title>Sanchalana</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+<script src="http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.4.min.js"></script>
+<script src="js/jquery.splashscreen.js"></script>
+<script src="js/script.js"></script>
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href='https://fonts.googleapis.com/css?family=Permanent+Marker:400' rel='stylesheet' type='text/css'>
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/vendor.min.css">
+   <link rel="stylesheet" href="css/main.css">     
+
+   <!-- script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.png" >
+
+</head>
+
+<style type="text/css">
+  
+  /*Css For countdown Timer*/
+  
+</style>
+<body>
+
+<style type="text/css">
+  
+  #video-viewport { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1; }
+    video {    display: block; width: 100%; height: auto; 
+               position:absolute;
+               top:50%;
+              left:50%;
+              min-width:100%;
+              min-height:100%;
+              width:auto;
+              height:auto;
+              z-index:-100;
+              opacity: 0.5;
+              -ms-transform: translateX(-50%) translateY(-50%);
+              -moz-transform: translateX(-50%) translateY(-50%);
+              -webkit-transform: translateX(-50%) translateY(-50%);
+              transform: translateX(-50%) translateY(-50%);
+              background: url(../images/clouds.jpg) no-repeat;
+              background-size: cover;
+          }
+          h5{
+              color:orange;
+              font-size: 3rem;
+          }
+  @media only screen and (max-width:480px)
+   {
+   video {    display: block; width: 100%; height: auto; 
+               position:absolute;
+               top:50%;
+              left:50%;
+              min-width:400%;
+              min-height:700%;
+              width:auto;
+              height:auto;
+              z-index:900;
+              opacity: 0.3;
+              -ms-transform: translateX(-50%) translateY(-50%);
+              -moz-transform: translateX(-50%) translateY(-50%);
+              -webkit-transform: translateX(-50%) translateY(-50%);
+              transform: translateX(-50%) translateY(-50%);
+              background: url(../images/clouds.jpg) no-repeat;
+              background-size: cover;
+
+          }
+
+}
+ 
+  .fullsize-video-bg { height: 100%; overflow: hidden; }
+
+  .fullsize-video-bg:before { content: ""; background: rgba(114,45,0,.35); position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+    
+
+
+  .fullsize-video-bg .inner { display: table; width: 100%; max-width: 24em; height: 100%; margin: 0 auto; padding: 0; position: relative; z-index: 2; text-shadow: 0 1px 5px rgba(0,0,0,.5); }
+  .fullsize-video-bg .inner > div { text-align: center; display: table-cell; vertical-align: middle; padding: 0 2em; }
+  .fullsize-video-bg2 { height: 100%; overflow: hidden; }
+
+  .fullsize-video-bg2:before { content: "";  position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+  .fullsize-video-bg:after {
+     content: ""; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgTWFjaW50b3NoIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjI4RkZBQTgzNzg1NzExRTU4NTQyODc3OUM4MTZGMUREIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjI4RkZBQTg0Nzg1NzExRTU4NTQyODc3OUM4MTZGMUREIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MjhGRkFBODE3ODU3MTFFNTg1NDI4Nzc5QzgxNkYxREQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MjhGRkFBODI3ODU3MTFFNTg1NDI4Nzc5QzgxNkYxREQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz66uHInAAAAIUlEQVR42mL5//8/AyMj42YGIGBigABfEMEIkoEBgAADAKvuBwVS8BAjAAAAAElFTkSuQmCC);
+      background-size: 3px 3px; 
+      position: absolute; top: 0; 
+      left: 0; width: 100%; height: 100%;
+       z-index: 1; 
+    }
+
+
+    .fullsize-video-bg2 .inner { display: table; width: 100%; max-width: 24em; height: 100%; margin: 0 auto; padding: 0; position:relative; z-index: 2; text-shadow: 0 1px 5px rgba(0,0,0,.5); }
+    .fullsize-video-bg2 .inner > div { text-align: center; display: table-cell; vertical-align: middle; padding: 0 2em; }
+
+    /*swiper container */
+
+
+.block {
+  background-color: #F5F5F5;
+  color: #008080;
+  height: 100px;
+  text-align: center;
+  padding: 20px
+  -moz-box-shadow: 3px 3px 3px #ccc;
+-webkit-box-shadow: 3px 3px 3px #ccc;
+box-shadow: 3px 3px 3px #ccc;
+}
+.horizontal-scroll {
+  background-color:black /*#A9A9A9*/;
+  overflow: hidden;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 20px 0;
+/*  -moz-box-shadow: 3px 3px 3px #ccc;
+-webkit-box-shadow: 3px 3px 3px #ccc;
+box-shadow: 3px 3px 3px #ccc;*/
+}
+.item {
+  
+  display: inline-block;
+  width: 180px;
+
+  background-color:gray;
+  text-align: center;
+  padding:0px 0px ;
+  font-size: 20px;
+  margin: 0 20px
+/*  box-shadow:5px 10px;*/
+
+}
+.item img{
+ width: 100%;
+ height: 100%;
+ -moz-box-shadow: 10px 10px 10px gray;
+-webkit-box-shadow: 13px 10px 13px gray;
+box-shadow: 13px 13px 23px gray;
+}
+.wrapper {
+  width: 350px;
+  margin: auto;
+  border: 0px solid black ;
+}
+@media only screen and (min-width:480px) {
+  .wrapper {
+  width: 350px;
+  margin: auto;
+  border: 1px solid #333;
+}
+
+}
+@media only screen and (min-width:1000px) {
+  .wrapper {
+  width: 800px;
+  margin: auto;
+  border: 1px solid #333;
+}
+}
+@media only screen and (max-width:340px) {
+  .wrapper {
+  width: 300px;
+  margin: auto;
+  border: 1px solid #333;
+}
+}
+@media only screen and (min-width:1200px) {
+  .wrapper {
+  width:1500px;
+  margin: auto;
+  border: 1px solid #333;
+}
+
+
+
+/*.headerscroll {
+  text-transform: uppercase;
+  font-size: 30px;
+  background-color: #008080;
+  color: #F5F5F5;
+  padding: 40px 20px;
+  text-align: center;
+}*/
+/*body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+} 
+
+main {
+  flex: 1 0 auto;
+}*/
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+} 
+
+main {
+  flex: 1 0 auto;
+}
+
+h1.title,
+.footer-copyright a {
+  font-family: 'Architects Daughter', cursive;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+/* start welcome animation */
+
+body.welcome {
+  background: #512da8;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.welcome .splash {
+  height: 0px;
+  padding: 0px;
+  border: 130em solid #039be5;
+  position: fixed;
+  left: 50%;
+  top: 100%;
+  display: block;
+  box-sizing: initial;
+  overflow: hidden;
+
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+}
+
+.welcome #welcome {
+  background: #311b92 ;
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards, hide 2s 2.9s ease forwards;
+}
+   
+/* moveIn */
+.welcome header,
+.welcome a.btn {
+  opacity: 0;
+  animation: moveIn 2s 3.1s ease forwards;
+}
+
+@keyframes init {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 56px;
+    height: 56px;
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes puff {
+  0% {
+    top: 100%;
+    height: 0px;
+    padding: 0px;
+  }
+  100% {
+    top: 50%;
+    height: 100%;
+    padding: 0px 100%;
+  }
+}
+
+@keyframes borderRadius {
+  0% {
+    border-radius: 50%;
+  }
+  100% {
+    border-radius: 0px;
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    background: #311b92;
+    top: 100%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 50%;
+    background: #039be5;
+  }
+}
+
+@keyframes materia {
+  0% {
+    background: #039be5;
+  }
+  50% {
+    background: #039be5;
+    top: 26px;
+  }
+  100% {
+    background: #311b92;
+    width: 100%;
+    height: 64px;
+    border-radius: 0px;
+    top: 26px;
+  }
+}
+
+@keyframes moveIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+} 
+
+
+
+</style>
+
+
+
+    
+
+   <section id="portfolio">
+
+      <div class="row section-head">
+
+      	<div class="twelve columns">
+
+      		<h1>Artistic:<span></span></h1>
+
+	         <hr />               
+
+           <!-- countdown timer here -->
+
+         
+
+	        <!--  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	         </p>
+ -->
+	      </div>
+
+      </div> <!-- end section-head -->
+
+      <div class="row items">
+
+         <!-- portfolio-wrapper -->
+         <div id="portfolio-wrapper" class="bgrid-fourth s-bgrid-third tab-bgrid-half">
+
+            <div class="bgrid folio-item">
+               <div class="item-wrap">
+                  <a href="#modal-01">
+	                  <img src="images/solodance.jpg" alt="Underwater">
+                     <span class="w3-tag w3-display-topleft">SoloDance</span>
+                     <div class="overlay"></div>                       
+                     <div class="portfolio-item-meta">
+     					      <h5>Solo Dance </h5>
+                        <p>Click to register</p>
+     					   </div> 
+                     <div class="link-icon"><i class="fa fa-plus"></i></div>
+                  </a>
+               </div>
+        		</div> <!-- item end -->
+
+            <div class="bgrid folio-item">
+               <div class="item-wrap">
+                  <a href="#modal-02">
+                     <img src="images/groupdance.jpg" alt="Hotel Sign">
+                     <span class="w3-tag w3-display-topleft">GroupDance</span>
+                     <div class="overlay">
+                      <div class="portfolio-item-meta">
+          					   <h5>Group Dance</h5>
+                           <p>Click to register</p>
+          					</div>
+                     </div>
+                     <div class="link-icon"><i class="fa fa-plus"></i></div>
+                  </a>
+               </div>
+         	</div> <!-- item end -->
+
+            <div class="bgrid folio-item">
+               <div class="item-wrap">
+                  <a href="#modal-03">
+                     <img src="images/instrumental.jpg" alt="Beetle">
+                     <span class="w3-tag w3-display-topleft">Instrumental</span>                        
+                     <div class="overlay">
+                      <div class="portfolio-item-meta">
+          					   <h5>Instrumental</h5>
+                           <p>Click to register</p>
+          					</div>
+                     </div>
+                     <div class="link-icon"><i class="fa fa-plus"></i></div>
+                  </a>
+               </div>
+         	</div> <!-- item end -->
+
+            <div class="bgrid folio-item">
+               <div class="item-wrap">
+                  <a href="#modal-04">
+                     <img src="images/solosinging.jpg" alt="Banjo Player">
+                     <span class="w3-tag w3-display-topleft">SoloSinging</span>
+                     <div class="overlay">
+                      <div class="portfolio-item-meta">
+          					   <h5>Solo Singing</h5>
+                           <p>Click to register</p>
+          					</div>
+                     </div>
+                     <div class="link-icon"><i class="fa fa-plus"></i></div>
+                  </a>
+               </div>
+         	</div> <!-- item end -->
+
+            <div class="bgrid folio-item">
+               <div class="item-wrap">
+                  <a href="#modal-05">
+                   <img src="images/groupsing.jpg" alt="Lighthouse">
+                   <span class="w3-tag w3-display-topleft">GroupSinging</span>
+                     <div class="overlay">
+                      <div class="portfolio-item-meta">
+          					   <h5>Group Singing</h5>
+                           <p>Click to register</p>
+          					</div>
+                     </div>
+                     <div class="link-icon"><i class="fa fa-plus"></i></div>
+                  </a>
+               </div>
+         	</div> <!-- item end -->
+
+            <div class="bgrid folio-item">
+               <div class="item-wrap">
+                  <a href="#modal-06">
+                     <img src="images/portfolio/girl.jpg" alt="Girl Stuff">
+                     <span class="w3-tag w3-display-topleft">FashionShow</span>
+                     <div class="overlay">
+                      <div class="portfolio-item-meta">
+          					   <h5>Fashion Show</h5>
+                           <p>Click to register</p>
+          					</div>
+                     </div>
+                     <div class="link-icon"><i class="fa fa-plus"></i></div>
+                  </a>
+               </div>
+         	</div> <!-- item end -->
+
+            <div class="bgrid folio-item">
+               <div class="item-wrap">
+                  <a href="#modal-07">                        
+                     <img src="images/svitidol.jpg" alt="Coffee Cup"> 
+                     <span class="w3-tag w3-display-topleft">SvitIdol</span>                      
+                     <div class="overlay">
+                      <div class="portfolio-item-meta">
+          					   <h5>Svit Idol</h5>
+                           <p>Click to register</p>
+          					</div>
+                     </div>
+                     <div class="link-icon"><i class="fa fa-plus"></i></div>
+                  </a>
+               </div>
+         	</div> <!-- item end -->
+
+           <!--  <div class="bgrid folio-item">
+               <div class="item-wrap">
+                  <a href="#modal-08">
+                     <img src="images/portfolio/judah.jpg" alt="Judah">
+                     <div class="overlay">
+                      	<div class="portfolio-item-meta">
+        					      <h5>Judah</h5>
+                           <p>Webdesign</p>
+        					   </div>
+                     </div>
+                     <div class="link-icon"><i class="fa fa-plus"></i></div>                     
+                  </a>
+               </div>
+       		</div>  item end --> 
+
+         </div> <!-- end portfolio-wrapper -->
+         
+
+         <!-- modal popup
+	   	========================================================= -->
+         <div id="modal-01" class="popup-modal mfp-hide">
+
+		      <div class="media">
+	      		<img src="images/solodance.jpg" alt="Underwater" />
+	      	</div>
+
+		      <div class="description-box">
+			      <h4>Solo Dance</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories">Branch Name</span>
+		      </div>
+
+            <div class="link-box group">
+            	<a href="solodance.html">Regsiter</a>
+            	<a href="#" class="popup-modal-dismiss">Close</a>         
+            </div>
+
+	      </div><!-- modal-01 end -->
+
+     
+<!--     register model end -->
+
+         <div id="modal-02" class="popup-modal mfp-hide">
+
+		      <div class="media">
+	      		<img src="images/groupdance.jpg" alt="Hotel Sign" />
+	      	</div>
+
+		      <div class="description-box">
+			      <h4>Group Dance</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories">Branch Name</span>
+		      </div>
+
+            <div class="link-box">            	
+                <a onclick="document.getElementById('modal-02r').style.display='block'" class="popup-modal-dismiss">Regsiter</a>
+		         <a href="#" class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-02 end -->
+   
+<!--     register model end -->
+
+         <div id="modal-03" class="popup-modal mfp-hide">
+
+		      <div class="media">
+	      		<img src="images/instrumental.jpg" alt="" />
+	      	</div>
+
+		      <div class="description-box">
+			      <h4>Instrumental</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories">Branch Name</span>
+		      </div>
+
+            <div class="link-box">
+                <a onclick="document.getElementById('modal-03r').style.display='block'" class="popup-modal-dismiss">Regsiter</a>
+		         <a href="#" class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-03 end -->
+  
+<!--     register model end -->
+
+			<div id="modal-04" class="popup-modal mfp-hide">
+
+		      <div class="media">
+	      		<img src="images/solosinging.jpg" alt="" />
+	      	</div>
+
+		      <div class="description-box">
+			      <h4>Solo Singing</h4>
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories">Branch</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="soloSinging.html">Register</a>
+		         <a href="#" class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-04 end -->
+
+	      <div id="modal-05" class="popup-modal slider mfp-hide">	
+
+	      	<div class="media">
+	      		<img src="images/groupsing.jpg" alt="" />
+	      	</div>      	
+
+		      <div class="description-box">
+			      <h4>Group Singing</h4>		      
+
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+
+			      <div class="categories">Branch</div>
+               
+		      </div>
+
+            <div class="link-box">
+              <a  class="popup-modal-dismiss">Regsiter</a>
+		         <a href="#" class="popup-modal-dismiss">Close</a>
+            </div>		      
+
+	      </div><!-- modal-05 end -->
+
+	      <div id="modal-06" class="popup-modal mfp-hide">
+
+		      <div class="media">
+	      		<img src="images/svitidol.jpg" alt="" />
+	      	</div>	
+           <div class="link-box">
+              <a href="fashion.html">Regsiter</a>
+             <a href="#" class="popup-modal-dismiss">Close</a>
+            </div>
+
+
+		      <div class="description-box">
+			      <h4>Fashion Show (Rules)</h4>			      
+
+			      <p>
+           <p style="color: black; font-weight: 900; ">1.Number of participants should be 10+2<br>
+                      2.Time duration should be 8+2min<br>
+                      3. Costumes should be descent and no vulgarity<br>
+                      4. Judges decision will be final<br>
+                      5. Team should report before one
+                       hour from the start of the dance event<br>
+            </p>
+            <h4 style="color: black">Faculty co-ordinator<br></h4>
+            <span><p style="color: black">Akshay Kumar<h5><a href="tel:9620293160" style="color:black" class="fa fa-phone " >9620293160</h4></a></span></p>
+
+            <h4>Student co-ordinators<br></h4>
+            Nikith Raj</p>
+
+         </p> 
+            </p>
+
+			      <div class="categories">Branch</div>
+           
+		      </div>
+
+           
+	      </div><!-- modal-06 end -->
+
+	      <div id="modal-07" class="popup-modal mfp-hide">
+
+		      <div class="media">
+	      		<img src="images/svitidol.jpg" alt="" />
+	      	</div>	
+
+		      <div class="description-box">
+			      <h4>SvitIdol (Rules)</h4>			      
+
+			      <p>1.Participants to dance only on the stage.
+                2.Getting off the stage will be considered 
+                 as disqualified.<br>
+                3.Both students and lecturers can participate.<br>
+                4.Judges decisions are final.<br>
+                5.It is a solo event.<br>
+                6.The one who entertains the most,
+                 qualifies ahead.<br>
+                7.Song will be played for 1 minute.<br>
+                8.Final round will be decided based on 
+                the number of participants.<br>
+                9.No entries will be entertained 
+                after the end of 1st round.<br>
+            </p>
+
+			      <div class="categories">Branch</div>
+               
+		      </div>
+
+            <div class="link-box">
+              <a  class="popup-modal-dismiss">Regsiter</a>
+		         <a href="#" class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-07 end -->
+
+	      <div id="modal-08" class="popup-modal mfp-hide">
+
+		      <div class="media">
+	      		<img src="images/portfolio/modals/m-judah.jpg" alt="" />
+	      	</div>	
+
+		      <div class="description-box">
+			      <h4>Judah</h4>			      
+
+			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+
+			      <div class="categories">Webdesign</div>
+               
+		      </div>
+
+            <div class="link-box">
+              <a onclick="document.getElementById('modal-01r').style.display='block'" class="popup-modal-dismiss">Regsiter</a>
+		         <a href="#" class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-08 end -->
+
+      </div>  <!-- end row -->
+
+   </section> <!-- end Artisctic -->
+
+<!-- 
+  Second event list -->
+   <section id="portfolio">
+
+      <div class="row section-head">
+
+        <div class="twelve columns">
+
+          <h1>tech-Heavy:<span>.</span></h1>
+
+           <hr />               
+
+           <!-- countdown timer here -->
+
+         
+
+          <!--  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+           </p>
+ -->
+        </div>
+
+      </div> <!-- end section-head -->
+
+        <div class="row items">
+
+         <!-- portfolio-wrapper -->
+         <div id="portfolio-wrapper" class="bgrid-fourth s-bgrid-third tab-bgrid-half">
+
+            <div class="bgrid folio-item">
+               <div class="item-wrap">
+                  <a href="#modal-21">
+                    <img src="images/gaming.jpg" alt="game">
+                     <span class="w3-tag w3-display-topleft">Gaming</span>
+                     <div class="overlay"></div>                       
+                     <div class="portfolio-item-meta">
+                    <h5>Gaming </h5>
+                        <p>Click to register</p>
+                 </div> 
+                     <div class="link-icon"><i class="fa fa-plus"></i></div>
+                  </a>
+               </div>
+            </div> <!-- item end -->
+
+            <div class="bgrid folio-item">
+               <div class="item-wrap">
+                  <a href="#modal-22">
+                     <img src="images/treasure.jpg" alt="Hotel Sign">
+                     <span class="w3-tag w3-display-topleft">TreasureHunt</span>
+                     <div class="overlay">
+                      <div class="portfolio-item-meta">
+                       <h5>Treasure Hunt</h5>
+                           <p>Click to register</p>
+                    </div>
+                     </div>
+                     <div class="link-icon"><i class="fa fa-plus"></i></div>
+                  </a>
+               </div>
+          </div> <!-- item end -->
+
+            <div class="bgrid folio-item">
+               <div class="item-wrap">
+                  <a href="#modal-23">
+                     <img src="images/super.jpg" alt="Beetle">
+                     <span class="w3-tag w3-display-topleft">SuperMinute</span>                        
+                     <div class="overlay">
+                      <div class="portfolio-item-meta">
+                       <h5>Super Minute</h5>
+                           <p>Click to register</p>
+                    </div>
+                     </div>
+                     <div class="link-icon"><i class="fa fa-plus"></i></div>
+                  </a>
+               </div>
+          </div> <!-- item end -->
+
+            <div class="bgrid folio-item">
+               <div class="item-wrap">
+                  <a href="#modal-24">
+                     <img src="images/crypto.jpg" alt="Banjo Player">
+                     <span class="w3-tag w3-display-topleft">CryptoHunt</span>
+                     <div class="overlay">
+                      <div class="portfolio-item-meta">
+                       <h5>CryptoHunt</h5>
+                           <p>Click to register</p>
+                    </div>
+                     </div>
+                     <div class="link-icon"><i class="fa fa-plus"></i></div>
+                  </a>
+               </div>
+          </div> <!-- item end -->
+
+            <div class="bgrid folio-item">
+               <div class="item-wrap">
+                  <a href="#modal-25">
+                   <img src="images/Searchit.jpg" alt="Lighthouse">
+                   <span class="w3-tag w3-display-topleft">SearchIt</span>
+                     <div class="overlay">
+                      <div class="portfolio-item-meta">
+                       <h5>Search It</h5>
+                           <p>Click to register</p>
+                    </div>
+                     </div>
+                     <div class="link-icon"><i class="fa fa-plus"></i></div>
+                  </a>
+               </div>
+          </div> <!-- item end -->
+
+            <div class="bgrid folio-item">
+               <div class="item-wrap">
+                  <a href="#modal-26">
+                     <img src="images/portfolio/girl.jpg" alt="Girl Stuff">
+                     <span class="w3-tag w3-display-topleft">SlowDrag</span>
+                     <div class="overlay">
+                      <div class="portfolio-item-meta">
+                       <h5>Slow Drag</h5>
+                           <p>Click to register</p>
+                    </div>
+                     </div>
+                     <div class="link-icon"><i class="fa fa-plus"></i></div>
+                  </a>
+               </div>
+          </div> <!-- item end -->
+
+            <div class="bgrid folio-item">
+               <div class="item-wrap">
+                  <a href="#modal-27">                        
+                     <img src="images/standup.jpg" alt="Coffee Cup"> 
+                     <span class="w3-tag w3-display-topleft">StandUpComedy</span>                      
+                     <div class="overlay">
+                      <div class="portfolio-item-meta">
+                       <h5>StandUp Comedy</h5>
+                           <p>Click to register</p>
+                    </div>
+                     </div>
+                     <div class="link-icon"><i class="fa fa-plus"></i></div>
+                  </a>
+               </div>
+          </div> <!-- item end -->
+
+           <!--  <div class="bgrid folio-item">
+               <div class="item-wrap">
+                  <a href="#modal-08">
+                     <img src="images/portfolio/judah.jpg" alt="Judah">
+                     <div class="overlay">
+                        <div class="portfolio-item-meta">
+                        <h5>Judah</h5>
+                           <p>Webdesign</p>
+                     </div>
+                     </div>
+                     <div class="link-icon"><i class="fa fa-plus"></i></div>                     
+                  </a>
+               </div>
+          </div>  <!-- item end --> 
+
+         </div> <!-- end portfolio-wrapper -->
+         
+
+         <!-- modal popup
+      ========================================================= -->
+         <div id="modal-21" class="popup-modal mfp-hide">
+
+          <div class="media">
+            <img src="images/gaming.jpg" alt="Underwater" />
+          </div>
+
+          <div class="description-box">
+            <h4>Rules</h4>
+            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories">Branch Name</span>
+          </div>
+
+            <div class="link-box group">
+              <a href="#modal-21r" onclick="document.getElementById('modal-21r').style.display='block'" class="popup-modal-dismiss">Register</a>
+              
+              <a href="#" class="popup-modal-dismiss">Close</a>         
+            </div>
+
+        </div><!-- modal-01 end -->
+   
+         
+
+          <!--  <h3 class="plan-title ">Register</h3> -->
+
+     
+                                             
+      
+
+         
+        
+
+         <div id="modal-22" class="popup-modal mfp-hide">
+
+          <div class="media">
+            <img src="images/treasure.jpg" alt="Hotel Sign" />
+          </div>
+
+          <div class="description-box">
+            <h4>Coordinators:</h4>
+            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories">Branch Name</span>
+          </div>
+
+            <div class="link-box">              
+               <a href="#modal-22r" onclick="document.getElementById('modal-22r').style.display='block'" class="popup-modal-dismiss">Register</a>
+               
+             <a href="#" class="popup-modal-dismiss">Close</a>
+            </div>
+
+        </div><!-- modal-02 end -->
+           
+      </div>
+    
+<!--     register model end -->
+
+         <div id="modal-23" class="popup-modal mfp-hide">
+
+          <div class="media">
+            <img src="images/instrumental.jpg" alt="" />
+          </div>
+
+          <div class="description-box">
+            <h4>Instrumental</h4>
+            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories">Branch Name</span>
+          </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net">Details</a>
+             <a href="#" class="popup-modal-dismiss">Close</a>
+            </div>
+
+        </div><!-- modal-03 end -->
+
+      <div id="modal-24" class="popup-modal mfp-hide">
+
+          <div class="media">
+            <img src="images/solosinging.jpg" alt="" />
+          </div>
+
+          <div class="description-box">
+            <h4>Solo Singing</h4>
+            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+               <span class="categories">Branch</span>
+          </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net">Details</a>
+             <a href="#" class="popup-modal-dismiss">Close</a>
+            </div>
+
+        </div><!-- modal-04 end -->
+
+        <div id="modal-25" class="popup-modal slider mfp-hide"> 
+
+          <div class="media">
+            <img src="images/groupsing.jpg" alt="" />
+          </div>        
+
+          <div class="description-box">
+            <h4>Group Singing</h4>          
+
+            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+
+            <div class="categories">Branch</div>
+               
+          </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net">Details</a>
+             <a href="#" class="popup-modal-dismiss">Close</a>
+            </div>          
+
+        </div><!-- modal-05 end -->
+
+        <div id="modal-26" class="popup-modal mfp-hide">
+
+          <div class="media">
+            <img src="images/svitidol.jpg" alt="" />
+          </div>  
+
+          <div class="description-box">
+            <h4>Fashion Show</h4>           
+
+            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+
+            <div class="categories">Branch</div>
+               
+          </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net">Details</a>
+             <a href="#" class="popup-modal-dismiss">Close</a>
+            </div>
+
+        </div><!-- modal-06 end -->
+
+        <div id="modal-27" class="popup-modal mfp-hide">
+
+          <div class="media">
+            <img src="images/svitidol.jpg" alt="" />
+          </div>  
+
+          <div class="description-box">
+            <h4>SvitIdol</h4>           
+
+            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+
+            <div class="categories">Branch</div>
+               
+          </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net">Details</a>
+             <a href="#" class="popup-modal-dismiss">Close</a>
+            </div>
+
+        </div><!-- modal-07 end -->
+
+        <div id="modal-08" class="popup-modal mfp-hide">
+
+          <div class="media">
+            <img src="images/portfolio/modals/m-judah.jpg" alt="" />
+          </div>  
+
+          <div class="description-box">
+            <h4>Judah</h4>            
+
+            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
+
+            <div class="categories">Webdesign</div>
+               
+          </div>
+
+            <div class="link-box">
+               <a href="http://www.behance.net">Details</a>
+             <a href="#" class="popup-modal-dismiss">Close</a>
+            </div>
+
+        </div>
+      </section>
+      <br><br>
+<!-- 
+      </div>  
+
+      
+
+   </section> <!-- end portfolio -->
+
+
+   
+
+   <!-- About Section
+   ================================================== -->
+  <!--  <section id="about">
+
+   	<div class="row section-head">
+
+      	<div class="twelve columns">
+
+      		<h1>Who Are We<span>.</span></h1>
+
+	         <hr />     	    
+
+	         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+	         eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+	         voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	         </p>
+
+	      </div> <!-- end section-head 
+      </div>
+
+      <div class="row mobile-no-padding">       	
+
+      	<div class="process bgrid-half tab-bgrid-whole group">
+
+      		<div class="bgrid">
+
+			      <h3>Our Process.</h3>	
+
+			      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+			      </p>
+
+		   	</div>
+
+      		<div class="bgrid">
+
+			     	<h3>Our Approach.</h3>
+
+			     	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+			   	</p>	
+
+		      </div> 
+
+		      <div class="bgrid">
+
+			     	<h3>Our Goal.</h3>	
+
+			     	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+			      </p>
+
+		      </div>
+
+		      <div class="bgrid">
+
+			      <h3>Our Mission.</h3>
+
+			      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+			      </p>	
+
+		      </div>
+
+      	</div> <!-- end process      	
+
+     	</div> <!-- end row 
+
+
+      <div class="row team section-head">
+
+   		<div class="twelve columns">
+
+	         <h1>Meet Our Team<span>.</span></h1>
+
+	         <hr />	         
+
+	      </div>
+
+      </div> <!-- end section-head 
+
+      <div class="row">
+
+         <div id="team-wrapper" class="bgrid-fourth s-bgrid-third tab-bgrid-half mob-bgrid-whole group">
+
+            <div class="bgrid member">
+
+					<div class="member-pic">
+						<img src="images/team/member01-k.jpg" alt=""/>
+                 	<div class="mask"></div>       	
+               </div>
+               <div class="member-name">
+                  <h3>Naruto Uzumaki</h3>
+                  <span>Creative Director</span>
+               </div>
+
+               <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
+               nisi elit consequat ipsum, nec sagittis sem nibh id elit. </p>
+
+               <ul class="member-social">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a href="#"><i class="fa fa-skype"></i></a></li>
+               </ul>
+
+            </div> <!-- end member -
+
+            <div class="bgrid member">
+								
+					<div class="member-pic">
+                  <img src="images/team/member03-k.jpg" alt=""/>
+               	<div class="mask"></div>  
+               </div>
+               <div class="member-name">
+                  <h3>Sasuke Uchiha</h3>
+                  <span>Lead Designer</span>
+               </div>
+
+               <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
+               nisi elit consequat ipsum, nec sagittis sem nibh id elit. </p>
+
+               <ul class="member-social">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a href="#"><i class="fa fa-skype"></i></a></li>
+               </ul>
+
+            </div> <!-- end member 
+
+            <div class="bgrid member">
+								
+					<div class="member-pic">
+						<img src="images/team/member04-k.jpg" alt=""/>
+                 	<div class="mask"></div>                          	
+               </div>
+               <div class="member-name">
+                  <h3>Shikamaru Nara</h3>
+                  <span>Designer</span>
+               </div>
+
+               <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
+               nisi elit consequat ipsum, nec sagittis sem nibh id elit. </p>
+
+               <ul class="member-social">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a href="#"><i class="fa fa-skype"></i></a></li>
+               </ul>
+
+     			</div> <!-- end member 
+
+            <div class="bgrid member">
+								
+					<div class="member-pic">
+                 	<img src="images/team/member05-k.jpg" alt=""/>
+                 	<div class="mask"></div>  
+               </div>
+               <div class="member-name">
+                  <h3>Sakura Haruno</h3>
+                  <span>Designer</span>
+               </div>
+
+               <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
+               nisi elit consequat ipsum, nec sagittis sem nibh id elit. </p>
+
+               <ul class="member-social">
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a href="#"><i class="fa fa-skype"></i></a></li>
+               </ul>
+
+            </div> <!-- end member 
+
+         </div> <!-- end team-wrapper 
+
+      </div> <!-- end row -
+
+      <div id="call-to-action">	       
+
+		   <div class="row section-ads">
+
+		      <div class="twelve columns">		         		
+
+			      <h2><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Styleshout Recommends Dreamhost<span>.</span></a></h2>
+
+			      <p>
+			      Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT"><span>DreamHost</span></a>.
+					Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>. 
+					<!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. 				
+					</p>
+
+					<div class="action">
+			         <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT" >Sign Up Now</a>
+	         	</div>
+
+			   </div>
+
+		   </div> <!-- end section-ads		         	         
+
+	   </div> <!-- end call-to-action 	           
+
+   </section> <!-- end about  -->
+
+
+   <!-- Testimonials Section
+   ================================================== -->
+<!--    <section id="testimonials">
+
+      <div class="row content flex-container">
+    
+         <div id="testimonial-slider" class="flexslider">
+
+            <ul class="slides">
+               <li>
+                  <p>Your work is going to fill a large part of your life, and the only way to be truly satisfied is
+                  to do what you believe is great work. And the only way to do great work is to love what you do.
+                  If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.
+                  </p>
+
+                  <div class="testimonial-author">
+                    	<img src="images/avatars/avatar-1.jpg" alt="Author image">
+                    	<div class="author-info">
+                    		Steve Jobs
+                    		<span class="position">CEO, Apple.</span>
+                    	</div>
+                  </div>
+             	</li> end slide
+
+               <li>                       
+                  <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                  Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+                  nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                  </p>
+                  <div class="testimonial-author">
+                    	<img src="images/avatars/avatar-2.jpg" alt="Author image">
+                    	<div class="author-info">
+                    		John Doe
+                    		<span>CEO, ABC Corp.</span>
+                    	</div>
+                  </div>                        
+               </li> <!-- end slide 
+
+            </ul> <!-- end slides 
+
+         </div> <!-- end flexslider        
+        
+      </div> <!-- end row 
+
+   </section> <!-- end testimonials section -->  
+ 
+
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">  
+
+      	<div class="twelve columns content group">
+      		
+				<ul class="social-links">
+               <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+               <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+               <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>               
+               <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+               <li><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
+               <li><a href="#"><i class="fa fa-flickr"></i></a></li>               
+               <li><a href="#"><i class="fa fa-skype"></i></a></li>
+            </ul>
+
+            <hr />
+
+            <div class="info">
+
+            	<!-- <div class="footer-logo"></div> -->
+
+	            <p> 
+	            </p>	        
+
+	         </div>
+
+      	</div>           
+
+         <ul class="copyright">
+         	<li>&copy; Copyright 2015.</li> 
+         	<li>Design by <a href="http://www.styleshout.com/">Reetik Chitragupt</a>.</li>
+         </ul>
+
+         <div id="go-top">
+            <a class="smoothscroll" title="Back to Top" href="#hero">Back to Top<i class="fa fa-angle-up"></i></a>
+         </div>
+
+      </div> <!-- end row -->
+
+   </footer> <!-- end footer -->
+
+   <div id="preloader"> 
+    	<div id="loader">
+         <img src="images/icon2.png" style="width:100%;margin:20px 0" alt="Blog Template">
+      </div>
+   </div> 
+
+   <!-- Java Script
+   ================================================== --> 
+   <script src="js/jquery-1.11.3.min.js"></script>
+   <script src="js/jquery-migrate-1.2.1.min.js"></script>
+   <script src="js/jquery.flexslider-min.js"></script>
+   <script src="js/jquery.waypoints.min.js"></script>
+   <script src="js/jquery.validate.min.js"></script>
+   <script src="js/jquery.fittext.js"></script>
+   <script src="js/jquery.placeholder.min.js"></script>
+   <script src="js/jquery.magnific-popup.min.js"></script>  
+   <script src="js/main.js"></script>
+  <script src="js/jquery-2.1.3.mins.js"></script>
+   <script src="js/plugins2.js"></script>
+   <script src="js/main2.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+
+<script type="text/javascript">
+  /*Script for countdown timer*/    
+var target_date = new Date("Mar 26, 2020 17:55:25").getTime(); // set the countdown date
+var days, hours, minutes, seconds; // variables for time units
+
+var countdown = document.getElementById("tiles"); // get tag element
+
+getCountdown();
+
+setInterval(function () { getCountdown(); }, 1000);
+
+function getCountdown(){
+
+  // find the amount of "seconds" between now and target
+  var current_date = new Date().getTime();
+  var seconds_left = (target_date - current_date) / 1000;
+
+  days = pad( parseInt(seconds_left / 86400) );
+  seconds_left = seconds_left % 86400;
+     
+  hours = pad( parseInt(seconds_left / 3600) );
+  seconds_left = seconds_left % 3600;
+      
+  minutes = pad( parseInt(seconds_left / 60) );
+  seconds = pad( parseInt( seconds_left % 60 ) );
+
+  // format countdown string + set tag value
+  countdown.innerHTML = "<span>" + days+"<h5></h5>" + "</span><span>" + hours+"<h5></h5> "+"</span><span>" + minutes +"<h5></h5> "+ "</span><span>" + seconds +"<h5></h5> "+ "</span>"; 
+  if ( seconds_left < 0) {
+   
+      countdown.innerHTML = "<span>" + "<h5>Day</h5>" + "</span><span>" + "O" + "</span><span>" + "N" + "</span><span>" + "E" + "</span>"; 
+  }
+}
+
+function pad(n) {
+  return (n < 10 ? '0' : '') + n;
+}
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyB_5vqcnQ7sD2AsHeBRl2QB6GifZmp8jGM",
+    authDomain: "contactform-673b7.firebaseapp.com",
+    databaseURL: "https://contactform-673b7.firebaseio.com",
+    projectId: "contactform-673b7",
+    storageBucket: "",
+    messagingSenderId: "172917494368",
+    appId: "1:172917494368:web:1cc301177c4f4fd6a46905",
+    measurementId: "G-N5BDJDDC63"
+
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+//Reference for form collection(3)
+// let formMessage = firebase.database().ref('register');
+// let formMessage = firebase.database().ref('/');
+
+
+  
+  
+  database=firebase.database();
+  var ref=database.ref('BranchCount');
+ // var keys;
+  ref.on('value',gotData,errData);
+   var initials;
+   var count;
+   var match=0,usnD,sc;
+   var keys;
+   var len=0;
+
+  function gotData(data)
+  {
+
+     sc=data.val();
+   
+     keys=Object.keys(sc);
+   
+    
+    
+
+    
+
+  //send message values
+  // sendMessage(name, usn, email,event, phn, branch, sem, random);
+
+  
+  /*Fetching the elements from each object*/
+  
+  
+  for(var i=0;i<keys.length;i++)
+  {
+      
+      
+      var k=keys[i];
+
+      var ise=sc[k].ISE;
+      var cse=sc[k].CSE;
+      var mech=sc[k].MECH;
+      var eee=sc[k].EEE;
+      var civil=sc[k].CIVIL;
+      var mba=sc[k].MBA;
+      var ece=sc[k].ECE;
+     
+        // document.getElementById("names").innerHTML =event;
+        // $("#output").append('<p id="abc" style="font-size:1.4em; color:orange;border: 2px solid cyan;background-color: white ;border-radius: 50px; ">' + '<h2 style="color:white;">'+"Event name: "+event + '<br>'+"Payment: "+payment+ '<br></h2>'+"Registered through: "+email+'</p><br>');
+
+
+        // document.getElementById("names").innerHTML = event;
+  
+        // document.getElementById("names").innerHTML = event;
+        // $("#ise").append('<h3 id="ise">'ise);
+       
+
+
+   document.getElementById("isetext").innerHTML=ise;
+   document.getElementById("cse").innerHTML=cse;
+   document.getElementById("mech").innerHTML=mech;
+   document.getElementById("civil").innerHTML=civil;
+   document.getElementById("mba").innerHTML=mba;
+   document.getElementById("eee").innerHTML=eee;
+   document.getElementById("ece").innerHTML=ece;
+       // $("#output").empty();
+       // var li=document.createElement('li',usn+' '+initials);
+       //   li.parent('events');
+       
+     }
+    
+
+      
+       
+       
+
+   }
+  
+ 
+  
+    function errData(err)
+  {
+    console.log('error');
+    console.log(err);
+  }
+
+
+   </script>
+      
+
+
+</body>
+
+</html>

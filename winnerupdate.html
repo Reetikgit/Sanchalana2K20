@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>WinnersUpdate</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fontsP/material-design-iconic-font/css/material-design-iconic-font.min.css">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="cssP/style.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-color: black;">
+			<div class="inner">
+				<form action="" method="POST" id="registrationform">
+					<h3 style="color: white">Sanchalana Winners Panel</h3>
+          <br><br>
+           <div class="form-wrapper">
+              <label for="" style="color: white">Event Name</label>
+
+              <input type="text" id="eventname" class="form-control" required="Please enter event name" style="color: white">
+            </div>
+            <br>
+           
+                <hr>
+                <br>
+					<div class="form-group">
+         
+            <br><br>
+            <h1 >First Place</h1>
+						<div class="form-wrapper" >
+							<label for="" style="color: white;">Name</label>
+							<input type="text" id="name1" class="form-control" required="Please enter your name" style="color: white">
+						</div>
+						<div class="form-wrapper">
+							<label for="" style="color: white">Usn</label>
+							<input type="text"  id="usn1" class="form-control" required="Please enter your usn" style="color: white">
+						</div>
+					</div>
+         
+
+				 <div class="form-wrapper">
+          
+          <label for="">Branch</label>
+          <div>
+            <select  name="service" class="form-control" id="branch1" style="color:orange" required="required">
+              <option>ISE</option>
+              <option>CSE</option>
+              <option>EEE</option>
+              <option>ECE</option>
+              <option>CIVIL</option>
+              <option>MECH</option>
+              <option>MBA</option>
+            </select>
+          </div>
+          <span class="focus-input100"></span>
+           <div class="form-wrapper">
+              <label for="" style="color: white">Credits</label>
+              <input type="number"  id="credit1" class="form-control" required="Please enter credits" style="color: white">
+            </div>
+        </div>
+        
+        <hr>
+
+        <br>
+          <div class="form-group">
+           
+            <br><br>
+              <h1 >Second Place</h1>
+            <div class="form-wrapper">
+              <label for="" style="color: white">Name</label>
+              <input type="text" id="name2" class="form-control" required="Please enter your name" style="color: white">
+            </div>
+            <div class="form-wrapper">
+              <label for="" style="color: white">Usn</label>
+              <input type="text"  id="usn2" class="form-control" required="Please enter your usn" style="color: white">
+            </div>
+          </div>
+        <div class="form-wrapper">
+        
+          <label for="">Branch</label>
+          <div>
+            <select  name="service" class="form-control" id="branch2" style="color:orange" required="required">
+              <option>ISE</option>
+              <option>CSE</option>
+              <option>EEE</option>
+              <option>ECE</option>
+              <option>CIVIL</option>
+              <option>MECH</option>
+              <option>MBA</option>
+            </select>
+          </div>
+          <span class="focus-input100"></span>
+        </div>
+        <div class="form-wrapper">
+              <label for="" style="color: white">Credits</label>
+              <input type="number"  id="credit2" class="form-control" required="Please enter credits" style="color: white">
+            </div>
+             <hr>
+             <br>
+				  <div class="form-group">
+           
+            <br><br>
+
+              <h1 >Third Place</h1>
+            <div class="form-wrapper">
+              <label for="" style="color: white">Name</label>
+              <input type="text" id="name3" class="form-control" required="Please enter your name" style="color: white">
+            </div>
+            <div class="form-wrapper">
+              <label for="" style="color: white">Usn</label>
+              <input type="text"  id="usn3" class="form-control" required="Please enter your usn" style="color: white">
+            </div>
+          </div>
+        <div class="form-wrapper">
+        
+          <label for="">Branch</label>
+          <div>
+            <select  name="service" class="form-control" id="branch3" style="color:orange" required="required">
+              <option>ISE</option>
+              <option>CSE</option>
+              <option>EEE</option>
+              <option>ECE</option>
+              <option>CIVIL</option>
+              <option>MECH</option>
+              <option>MBA</option>
+            </select>
+          </div>
+          <span class="focus-input100"></span>
+        </div>
+        <div class="form-wrapper">
+              <label for="" style="color: white">Credits</label>
+              <input type="number"  id="credit3" class="form-control" required="Please enter credits" style="color: white">
+            </div>
+
+        
+					<button sendMessage()>Upload Results</button>
+				</form>
+			</div>
+		</div>
+		
+	</body>
+	  <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+  <script type="text/javascript">
+
+  
+ 
+  var firebaseConfig = {
+    apiKey: "AIzaSyB_5vqcnQ7sD2AsHeBRl2QB6GifZmp8jGM",
+    authDomain: "contactform-673b7.firebaseapp.com",
+    databaseURL: "https://contactform-673b7.firebaseio.com",
+    projectId: "contactform-673b7",
+    storageBucket: "",
+    messagingSenderId: "172917494368",
+    appId: "1:172917494368:web:1cc301177c4f4fd6a46905",
+    measurementId: "G-N5BDJDDC63"
+
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+//Reference for form collection(3)
+// let formMessage = firebase.database().ref('register');
+let formMessage = firebase.database().ref('Winners');
+
+document
+  .getElementById('registrationform')
+  .addEventListener('submit', formSubmit);
+  
+  database=firebase.database();
+  var ref=database.ref('noticeboard');
+
+ // var keys;
+  ref.on('value',gotData,errData);
+
+   var initials;
+   var count;
+   var match=0,usnD,sc,sc2;
+   var keys,keys2;
+   var len=0;
+  function gotData(data)
+  {
+
+     sc=data.val();
+    
+     keys=Object.keys(sc);
+     l=keys.length;
+    
+     
+   }
+
+    function errData(err)
+  {
+    console.log('error');
+    console.log(err);
+  }
+
+function formSubmit(e) {
+  e.preventDefault();
+  // Get Values from the DOM
+  let event=document.querySelector('#eventname').value;
+  let name1 = document.querySelector('#name1').value;
+  var name2 = document.querySelector('#name2').value;
+  let name3 = document.querySelector('#name3').value;
+
+  let usn1 = document.querySelector('#usn1').value;
+  let usn2 = document.querySelector('#usn2').value;
+  let usn3 = document.querySelector('#usn3').value;
+
+  let b1 = document.querySelector('#branch1').value;
+  let b2 = document.querySelector('#branch2').value;
+  let b3 = document.querySelector('#branch3').value;
+
+  let c1 = document.querySelector('#credit1').value;
+  let c2 = document.querySelector('#credit2').value;
+  let c3 = document.querySelector('#credit3').value;
+
+  //send message values
+  // sendMessage(name, usn, email,event, phn, branch, sem, random);
+
+  
+  /*Fetching the elements from each object*/
+
+// for(var i=0;i<keys.length;i++)
+//   {
+//       match=0;
+//       var k=keys[i];
+//       initials=sc[k].name;
+//       var emails=sc[k].email;
+//       usnD=sc[k].usn;
+
+
+//    }
+
+            sendMessage(event,name1,name2,name3,usn1,usn2,usn3,b1,b2,b3,c1,c2,c3);
+            alert("Results uploaded successfully on the board");
+            document.getElementById('registrationform').reset();
+  			     // window.location = "index.html#portfolio"         
+
+}
+
+//Send Message to Firebase(4)
+
+function sendMessage(event,name1,name2,name3,usn1,usn2,usn3,b1,b2,b3,c1,c2,c3) {
+  let newFormMessage = formMessage.push();
+
+  newFormMessage.set({
+    event:event,
+    name1: name1,
+    name2:name2,
+    name3:name3,
+    usn1:usn1,
+    usn2:usn2,
+    usn3:usn3,
+    branch1:b1,
+    branch2:b2,
+    branch3:b3,
+    credit1:c1,
+    credit2:c2,
+    credit3:c3
+
+  });
+ 
+
+}
+</script>
+<script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
+</html>

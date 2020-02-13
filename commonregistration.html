@@ -97,14 +97,14 @@
   
 //Reference for form collection(3)
 // let formMessage = firebase.database().ref('register');
-let formMessage = firebase.database().ref('Svit Idol');
+let formMessage = firebase.database().ref('BranchCount');
 
 document
   .getElementById('registrationform')
   .addEventListener('submit', formSubmit);
   
   database=firebase.database();
-  var ref=database.ref('SoloSinging');
+  var ref=database.ref('SoloDance');
 
  // var keys;
   ref.on('value',gotData,errData);
@@ -220,14 +220,14 @@ function sendMessage(name,usn, email,event, phn, branch, sem, random,payment) {
   let newFormMessage = formMessage.push();
 
   newFormMessage.set({
-    name: name,
-    usn: usn,
-    email: email,
-    event: event,
-    phn:phn,
-    branch: branch,
-    sem:sem,
-    random:random
+    CSE: name,
+    ISE: usn,
+    CIVIL: email,
+    MECH: event,
+    MBA:phn,
+    ECE: branch,
+    EEE:sem,
+    
 
   });
  

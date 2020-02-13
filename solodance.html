@@ -1,83 +1,85 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Solo dance</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <title>Solo Dance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- MATERIAL DESIGN ICONIC FONT -->
-		<link rel="stylesheet" href="fontsP/material-design-iconic-font/css/material-design-iconic-font.min.css">
-		
-		<!-- STYLE CSS -->
-		<link rel="stylesheet" href="cssP/style.css">
-	</head>
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link rel="stylesheet" href="fontsP/material-design-iconic-font/css/material-design-iconic-font.min.css">
+    
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="cssP/style.css">
+  </head>
 
-	<body>
+  <body>
 
-		<div class="wrapper" style="background-image: url('images/solodance.jpg');">
-			<div class="inner">
-				<form action="" method="POST" id="registrationform">
-					<h3 style="color: white">Registration Form</h3>
-					<div class="form-group">
-						<div class="form-wrapper">
-							<label for="">Name</label>
-							<input type="text" id="name" class="form-control" required="Please enter your name" style="color: white">
-						</div>
-						<div class="form-wrapper">
-							<label for="">Usn</label>
-							<input type="text"  id="usn" class="form-control" required="Please enter your usn" style="color: white">
-						</div>
-					</div>
-					<div class="form-wrapper">
-						<label for="">Email</label>
-						<input type="email"  id="email" class="form-control" required="required" style="color: white">
-					</div>
-					<div class="form-wrapper">
-						<label for="">Event</label>
+    <div class="wrapper" style="background-image: url('images/solodance.jpg');">
+      <div class="inner">
+        <form action="" method="POST" id="registrationform">
+          <h3 style="color: white">Registration Form</h3>
+          <div class="form-group">
+            <div class="form-wrapper">
+              <label for="">Name</label>
+              <input type="text" id="name" class="form-control" required="Please enter your name" style="color: white">
+            </div>
+            <div class="form-wrapper">
+              <label for="">Usn</label>
+              <input type="text"  id="usn" class="form-control" required="Please enter your usn" style="color: white">
+            </div>
+          </div>
+          <div class="form-wrapper">
+            <label for="">Email</label>
+            <input type="email"  id="email" class="form-control" required="required" style="color: white">
+          </div>
+          <div class="form-wrapper">
+            <label for="">Event</label>
 
-						<input type="text"  id="event" class="form-control" value="soloDance" readonly required="required" style="color: white">
-					</div>
-					<div class="form-wrapper">
-						<label for="">Phone</label>
-						<input type="number"  id="phn" class="form-control" required="required" style="color: white">
-					</div>
-				<div class="form-wrapper">
-				
-					<label for="">Branch</label>
-					<div>
-						<select  name="service" class="form-control" id="branch" style="color:orange">
-							<option>ISE</option>
-							<option>CSE</option>
-							<option>EEE</option>
-							<option>ECE</option>
-							<option>CIVIL</option>
-							<option>MBA</option>
-						</select>
-					</div>
-					<span class="focus-input100"></span>
-				</div>
-				
+            <input type="text"  id="event" class="form-control" value="Solo Dance" readonly required="required" style="color: white">
+          </div>
+          <div class="form-wrapper">
+            <label for="">Phone</label>
+            <input type="number"  id="phn" class="form-control" required="required" style="color: white">
+          </div>
+        <div class="form-wrapper">
+        
+          <label for="">Branch</label>
+          <div>
+            <select  name="service" class="form-control" id="branch" style="color:orange">
+              <option>ISE</option>
+              <option>CSE</option>
+              <option>EEE</option>
+              <option>ECE</option>
+              <option>CIVIL</option>
+              <option>MECH</option>
+              <option>MBA</option>
+            </select>
+          </div>
+          <span class="focus-input100"></span>
+        </div>
+        
 
-				<div class="form-wrapper">
-					<span class="label-input100">Semester</span>
-					<div>
-						<select class="form-control" name="budget"  id="sem" style="color:orange">
-							<option>2</option>
-							<option>4</option>
-							<option>6</option>
-							<option>8</option>
-						</select>
-					</div>
-					<span class="focus-input100"></span>
-				</div>
-					<button id="btns" sendMessage()>Register Now</button>
-				</form>
-			</div>
-		</div>
-		
-	</body>
-	  <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+        <div class="form-wrapper">
+          <span class="label-input100">Semester</span>
+          <div>
+            <select class="form-control" name="budget"  id="sem" style="color:orange">
+              <option>2</option>
+              <option>4</option>
+              <option>6</option>
+              <option>8</option>
+            </select>
+          </div>
+          <span class="focus-input100"></span>
+        </div>
+          <button id="sub" formsSubmit2()>Register Now</button>
+        </form>
+      </div>
+    </div>
+    
+  </body>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
   <script type="text/javascript">
+
   
  
   var firebaseConfig = {
@@ -101,6 +103,11 @@ let formMessage2 = firebase.database().ref('common');
 document
   .getElementById('registrationform')
   .addEventListener('submit', formSubmit);
+
+  var btn=document.getElementById('sub');
+  btn.addEventListener("click", formSubmit);
+  btn.addEventListener("click", formSubmit2);
+
   
   database=firebase.database();
   var ref=database.ref('SoloDance');
@@ -113,9 +120,6 @@ document
    var match=0,usnD,sc,sc2;
    var keys,keys2;
    var len=0;
-   var btn=document.getElementById('btns');
-  btn.addEventListener("click", formSubmit);
-
   function gotData(data)
   {
 
@@ -152,11 +156,12 @@ function formSubmit(e) {
   let phn = document.querySelector('#phn').value;
   let branch = document.querySelector('#branch').value;
   let sem = document.querySelector('#sem').value;
-  let random ='2k20'+''+Math.floor((Math.random() * 1000) + 1);
+  let random =Math.floor((Math.random() * 1000) + 1)+'fest'+''+Math.floor((Math.random() * 1000) + 1);
   //send message values
   // sendMessage(name, usn, email,event, phn, branch, sem, random);
   usnmatch=usn.toUpperCase();
-  let payment='not paid';
+  let payment='no';
+  
   /*Fetching the elements from each object*/
 
 for(var i=0;i<keys.length;i++)
@@ -185,28 +190,12 @@ for(var i=0;i<keys.length;i++)
     {
       if(usn.includes("1va1")||usn.includes("1VA1")||usn.includes("1Va1")||usn.includes("1vA1"))
       {
-         if(email.includes("@saividya.ac.in")||usn.includes("@SAIVIDYA.AC.IN"))
-      		{
-      			if(!(phn.length<10||phn.length>10))
-        		{
-
-            	sendMessage(name,usn.toUpperCase(),email,event,phn,branch,sem,random,payment);
-              // btn.addEventListener("click", formSubmit2);
-              	formSubmit2.call();
-          		}
-          		 else
-       			 {
-          			alert("Please enter a valid PhoneNumber")
-        		}
-        	} 
-          else
-          {
-          	alert("Please enter your college mail id")
-          }
-
-            // alert("Registration successfull. Check your college email id for the confirmation.");
-     //        document.getElementById('registrationform').reset();
-  			// window.location = "index.html#portfolio"         
+         
+          
+            sendMessage(name,usn.toUpperCase(),email,event,phn,branch,sem,random,payment);
+            alert("Registration successfull. Check your college email id for the confirmation.");
+            document.getElementById('registrationform').reset();
+           window.location = "index.html#portfolio"         
           
           
       }
@@ -215,11 +204,9 @@ for(var i=0;i<keys.length;i++)
          alert("Please enter a valid USN")
       }
     } 
-    if(match==1)
+    else
     {
-        alert("Usn already Registered for this event");
-
-        
+        alert("Usn already exsits")
 
     }
 
@@ -235,9 +222,9 @@ for(var i=0;i<keys.length;i++)
 
 }
 
-function formSubmit2() {
+function formSubmit2(e) {
 
-  // e.preventDefault();
+  e.preventDefault();
   // Get Values from the DOM
   let name = document.querySelector('#name').value;
   var usn = document.querySelector('#usn').value;
@@ -250,34 +237,52 @@ function formSubmit2() {
   //send message values
   // sendMessage(name, usn, email,event, phn, branch, sem, random);
   usnmatch=usn.toUpperCase();
-  let payment='not paid';
-  
+  let payment='no';
   /*Fetching the elements from each object*/
 
-for(var i=0;i<keys.length;i++)
+for(var i=0;i<keys2.length;i++)
   {
-     
-      
-      var k=keys[i];
-      initials=sc[k].name;
-      var emails=sc[k].email;
-      usnD=sc[k].usn;
 
-}
-    
+      match=0;
+      
+      var k=keys2[i];
+      initials=sc2[k].name;
+      var emails=sc2[k].email;
+      usnD=sc2[k].usn;
+      
+
+
+      if(usnD==usnmatch)
+      {
+
+          match++;
+          keyss=0;
+          break;
+      }
+   }
 
      //datadisplay.append(li);
     var usnvalid="1va1";
     
-    
+    if(match==0)
+    {
       if(usn.includes("1va1")||usn.includes("1VA1")||usn.includes("1Va1")||usn.includes("1vA1"))
       {
          
           
-            sendMessage2(name,usn.toUpperCase(),email,event,phn,branch,sem,random,payment);
+      if(!(phn.length<10||phn.length>10))
+        {
+          
+            sendMessage(name,usn.toUpperCase(),email,event,phn,branch,sem,random,payment);
             alert("Registration successfull. Check your college email id for the confirmation.");
             document.getElementById('registrationform').reset();
-  			window.location = "index.html#portfolio"         
+        window.location = "index.html#portfolio"         
+          
+       }
+       else
+       {
+        alert("Please enter a valid phone number")
+       }          
           
           
       }
@@ -286,7 +291,15 @@ for(var i=0;i<keys.length;i++)
          alert("Please enter a valid USN")
       }
     } 
-   
+    else
+    {
+        alert("Usn already exsits")
+
+    }
+    if(match>0)
+    {
+
+    }
 
   //Show Alert Message(5)
   
@@ -298,12 +311,12 @@ for(var i=0;i<keys.length;i++)
 
   //Form Reset After Submission(7)
 
-
+}
 //Send Message to Firebase(4)
 
 function sendMessage(name,usn, email,event, phn, branch, sem, random,payment) {
   let newFormMessage = formMessage.push();
- 
+  let newFormMessage2 = formMessage2.push();
   newFormMessage.set({
     name: name,
     usn: usn,
@@ -315,9 +328,6 @@ function sendMessage(name,usn, email,event, phn, branch, sem, random,payment) {
     random:random
 
   });
-}
-function sendMessage2(name,usn, email,event, phn, branch, sem, random,payment) {
-  let newFormMessage2 = formMessage2.push();
   newFormMessage2.set({
     name: name,
     usn: usn,
@@ -328,7 +338,6 @@ function sendMessage2(name,usn, email,event, phn, branch, sem, random,payment) {
     sem:sem,
     random:random,
     Payment:payment
-
 
   });
 

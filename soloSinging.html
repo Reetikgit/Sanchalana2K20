@@ -35,7 +35,7 @@
 					<div class="form-wrapper">
 						<label for="">Event</label>
 
-						<input type="text"  id="event" class="form-control" value="soloSinging" readonly required="required" style="color: white">
+						<input type="text"  id="event" class="form-control" value="Solo Singing" readonly required="required" style="color: white">
 					</div>
 					<div class="form-wrapper">
 						<label for="">Phone</label>
@@ -51,6 +51,7 @@
 							<option>EEE</option>
 							<option>ECE</option>
 							<option>CIVIL</option>
+              <option>MECH</option>
 							<option>MBA</option>
 						</select>
 					</div>
@@ -193,8 +194,8 @@ for(var i=0;i<keys.length;i++)
           
             sendMessage(name,usn.toUpperCase(),email,event,phn,branch,sem,random,payment);
             alert("Registration successfull. Check your college email id for the confirmation.");
-     //        document.getElementById('registrationform').reset();
-  			// window.location = "index.html#portfolio"         
+            document.getElementById('registrationform').reset();
+  			   window.location = "index.html#portfolio"         
           
           
       }
@@ -222,7 +223,7 @@ for(var i=0;i<keys.length;i++)
 }
 
 function formSubmit2(e) {
-	alert("Ica mer hegr")
+
   e.preventDefault();
   // Get Values from the DOM
   let name = document.querySelector('#name').value;
@@ -241,7 +242,7 @@ function formSubmit2(e) {
 
 for(var i=0;i<keys2.length;i++)
   {
-  	alert("Icame ehrer")
+
       match=0;
       
       var k=keys2[i];
@@ -267,14 +268,19 @@ for(var i=0;i<keys2.length;i++)
     {
       if(usn.includes("1va1")||usn.includes("1VA1")||usn.includes("1Va1")||usn.includes("1vA1"))
       {
-         
+         if(!(phn.length<10||phn.length>10))
+        {
           
             sendMessage(name,usn.toUpperCase(),email,event,phn,branch,sem,random,payment);
             alert("Registration successfull. Check your college email id for the confirmation.");
             document.getElementById('registrationform').reset();
   			window.location = "index.html#portfolio"         
           
-          
+       }
+       else
+       {
+        alert("Please enter a valid phone number")
+       }   
       }
       else
       {
@@ -327,7 +333,7 @@ function sendMessage(name,usn, email,event, phn, branch, sem, random,payment) {
     branch: branch,
     sem:sem,
     random:random,
-    paid:payment
+    Payment:payment
 
   });
 
