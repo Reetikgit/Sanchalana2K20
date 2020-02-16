@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<title>About</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="jquery.min.js"></script>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="icon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link href='https://fonts.googleapis.com/css?family=Permanent+Marker:400' rel='stylesheet' type='text/css'>
+
+<style>
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+h1.w3-jumb{
+    font-size:40px;
+  }
+.header {
+  
+
+    background-color: #eee;
+  opacity:0.8;
+  box-shadow: 1px 1px 4px 0 rgba(0,5,0,1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+
+
+
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+    font-weight:1000;
+    color:black
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+    background-color: #eee;
+
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color:cyan;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size:0.8em;
+  font-weight:800;
+  color:black;
+  padding:20px 20px;
+  text-decoration: none;
+    background-color: #eee;
+
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height:0;
+  transition: max-height .2s ease-out;
+  background-color:white;
+
+
+
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 30px 10px;
+  position: relative;
+  user-select: none;
+
+}
+
+.header .menu-icon .navicon {
+  background:#999;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width:24px;
+     background-color:gray;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #999;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+  
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+
+
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height:500px;
+  background-color:#eee;
+  color:black;
+
+  
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+  h1
+    {
+    color: black;
+    text-align:center;
+ 
+    font-family: Permanent Marker, sans-serif;
+    text-transform: uppercase;
+  
+    overflow: hidden;
+    font-size:4vw;
+    line-height: 1.1em;
+ 
+    }
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+ 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('head3.jpg');
+  min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("head2.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("/w3images/parallax3.jpg");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+@media screen and (max-width: 600px) {
+  iframe{
+    width:100vw;
+  }
+}
+.spinner {
+  width:50px;
+  height:50px;
+position: absolute;
+left:46%;
+top: 46%;
+-webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(360deg)  }
+}
+
+.spinner-wrapper {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: black;
+opacity:0.9;
+z-index: 999999;
+}
+
+</style>
+<body>
+ <div class="spinner-wrapper">
+<div class="spinner">
+ 
+  <img src="icon2.png" style="width:100%;margin:20px 0" alt="Blog Template"><br>
+</div>
+</div>
+<!-- Navbar (sit on top) -->
+<header class="header">
+  <a href="http://saividya.ac.in/" class="logo">
+    Sai Vidya Institute Of Technology 
+  </a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="Events.html">Events</a></li> 
+    <li><a href="gallery.html">Tech Gallery</a></li>
+    <li><a href="#contact">Conatct</a></li>
+
+     <li><a target="https://www.facebook.com/SaiVidyaInstituteOfTechnology/" href="https://www.facebook.com/SaiVidyaInstituteOfTechnology/"><i class="fa fa-facebook"></i></a></li>
+    <li><a target="https://twitter.com/saividyaIT" href="https://twitter.com/saividyaIT"><i class="fa fa-twitter"></i></a></li>
+    <li><a target="_blank" href=""><i class="fa fa-github"></i></a></li>
+    <li><a target="_blank" href=""><i class="fa fa-google-plus"></i></a></li> 
+
+    </ul> 
+</header>
+<!-- First Parallax Image with Logo Text -->
+<div id="section10" class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+   <br><br><br><br><br><br><br>
+   <iframe width="800" height="315" src="https://www.youtube.com/embed/AQQkaZ9esnY? controls=0&amp;showinfo=0&amp;autoplay=1&mute=1" frameborder="0" allow="autoplay;encrypted-media" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture " allowfullscreen></iframe>
+  </div>
+
+  </div>
+
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h1 class="w3-center">ABOUT TECHVIDYA</h1>
+  <p class="w3-center w3-black"><em>TECHNICAL FEST FOR SVIT</em></p>
+  <p style="color:black;"><strong>Techvidya is our annual state level technical fest,it is festival organized to host events related to various technical aspects.It is a platform to showcase the practical talent in the field they've learnt.Each branch such as Electrical,civil,computer etc...have its own version of technical events testing the participants on knowledge and applications of that field.During which a student learns to innovate, organize and develop new things and comes across several experiences that leads to management and leadership.TechVidya in our fest where each branch comes with its own set of technical skills,though the creative possibilities are endless,some of the events are coding and Debbugging,Robotics,Building Models,Paper presentation,tech talk etc...Here we conduct it to connect students from different colleges and its not just about competition but also event where lot of those ideas are seen live and learn more and be inspired.It installs the importance of originality and individuality that are the most vital aspects of engineering.So join us to make it more lively,enjoyable and successful.</p>
+  <div class="w3-row">
+    <div class="w3-col m18 w3-center w3-padding-large">
+      <p><b><i class="fa fa-user w3-margin-center"></i>OFFICIAL POSTER@2k19</b></p><br>
+      <img src="poster1.jpeg" class="w3-round w3-image w3-center" alt="Photo of Me" width="500" height="333">
+    </div>
+
+    <!-- Hide this text on small devices -->
+   </div>
+  
+
+<div class="w3-row  w3-center w3-blue w3-padding-16">
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">7</span><br>
+    Branches
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">30+</span><br>
+    Events
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge " >500+</span><br>
+    Participants
+  </div>
+  
+</div>
+
+
+<div class="w3-content" style="max-width:1500px">
+
+<!-- Header -->
+<div class="w3-opacity" id="gallery">
+<span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()"><i class=""></i></span> 
+<div class="w3-clear" ></div>
+<header class="w3-center w3-margin-bottom">
+  <h1><b>TECH GALLERY</b></h1>
+  <p><b>A tour to previous tech fests</b></p>
+  
+</div>
+
+<!-- Photo Grid -->
+<div class="w3-row" id="myGrid" style="margin-bottom:128px">
+  <div class="w3-third">
+    <img src="m1.jpeg" style="width:100%">
+    <img src="m2.jpeg" style="width:100%">
+  
+
+
+  </div>
+
+  <div class="w3-third">
+    <img src="m3.jpeg" style="width:100%">
+    <img src="m4.jpg" style="width:100%">
+
+   
+  </div>
+
+  <div class="w3-third">
+    <img src="m5.jpeg" style="width:100%">
+    <img src="m6.jpeg" style="width:100%">
+
+
+  </div>
+   <div class="item button-knowmore" style="--bg-color: #9b59b6;">
+          <br><br><br><br>
+            <a href="gallery.html"><button class="w3-button w3-teal w3-block w3-large">Explore More</button>
+     </a>
+    </div>
+</div>
+   
+<!-- End Page Content -->
+</div>
+
+     
+</header></div></div></strong></p></div>
+<!-- Footer -->
+
+ <footer id="contact" class="w3-center w3-black w3-padding-64">
+  
+  <div class="w3-xlarge w3-section">
+    <a href="https://www.facebook.com/reetik.chitragupt" class="fa fa-facebook-official w3-hover-opacity w3-black"></i></a>
+   <a href="https://www.instagram.com/reetik_chitragupt/" class="fa fa-instagram w3-hover-opacity w3-black"></i></a>
+    <a href="https://github.com/Reetikgit/Reetikgit.github.io" class="fa fa-github w3-hover-opacity w3-black"></i></a>
+    <a href="https://twitter.com/RChitragupt"class="fa fa-twitter w3-hover-opacity w3-black"></i></a>
+    <a href="https://www.linkedin.com/in/reetik-chitragupt-2316a9182/" class="fa fa-linkedin w3-hover-opacity"></i></a>
+    <i class="fa fa-envelope w3-hover-opacity w3-black">reetikchitragupt@gmail.com</i>
+  </div>
+   <i class="fa fa-phone w3-hover-opacity w3-black">7355670645</i>
+  <h4 class="footer">Developed & DESIGNED by  </h3><h3>Reetik Chitragupt(5th Sem ISE)</h4><a href="" title="W3.CSS" target="_blank" class="w3-hover-text-green"></a></p>
+
+  <h4 class="footer">SAI VIDYA INSTITUTE OF TECHNOLOGY</h4>
+  <a href="#section10" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    
+</footer> 
+ 
+<script>
+$(document).ready(function() {
+
+$(window).on("load", function() {
+preloaderFadeOutTime = 500;
+function hidePreloader() {
+var preloader = $('.spinner-wrapper');
+preloader.fadeOut(preloaderFadeOutTime);
+}
+hidePreloader();
+});
+});
+  function myFunction() {
+  var x = document.getElementById("myGrid");
+  if (x.className === "w3-row") {
+    x.className = "w3-row-padding";
+  } else { 
+    x.className = x.className.replace("w3-row-padding", "w3-row");
+  }
+}
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.width = "100%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
